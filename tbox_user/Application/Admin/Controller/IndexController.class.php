@@ -12,11 +12,7 @@ class IndexController extends BaseController {
   }
 
   public function index(){
-    $join="left join apikey on apikey.user_id=device.user_id";
-    $map['device.user_id']=session('adminid');
-
-    $field="device.id,device.device_id,device.title,apikey.apikey";
-    $this->base_join_index(M("device"),$map,$join,$field);
+    $this->display();
     }
   public function selectlist(){
 
