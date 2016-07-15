@@ -3,15 +3,15 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../../../../Public/css/less.css">
-<link rel="stylesheet" type="text/css" href="../../../../Public/css/basic.css">
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/less.css">
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/basic.css">
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="css/ie8.css">
 <![endif]-->
 <!--[if gte IE 9]> 
 <link rel="stylesheet" type="text/css" href="css/ie.css"> 
 <![endif]-->
-<script src="../../../../Public/js/jquery-1.11.0.min.js"></script>
+<script src="__ROOT__/Public/js/jquery-1.11.0.min.js"></script>
 <script>
 //function getCookie(c_name)
 //{
@@ -55,7 +55,7 @@
 $(document).ready(function(){
   $("#btn1").click(function(){
   	if($("#name").val()!=""&&$("#password").val()!=""){
-  		$.post("http://192.168.1.42/tbox_user/index.php/Admin/login/login", { name: $("#name").val(), password: $("#password").val() },
+  		$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { name: $("#name").val(), password: $("#password").val() },
     	function(data){
      	alert("Data Loaded: " + data);
     	});
