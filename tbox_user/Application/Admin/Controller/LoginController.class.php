@@ -53,10 +53,21 @@ class LoginController extends Controller {
                $group=implode(",",$new['modular_id']);
                 session('group',$group);
 */
+              session(array('name'=>'session_id','expire'=>3600));
+              session('id',$arr["id"]);
+              echo(session_id());
               $token=session_id();
-              cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
-              cookie('name',$arr["name"]);  //设置cookie
-              session('adminid',$arr["id"]); 
+              if(S($token)=="1")
+                {
+                  S(,NULL);
+                }
+              else{
+                S($token,'1',3600);
+              }  
+              exit;
+             /* cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
+              cookie('name',$arr["name"]); */ //设置cookie
+               
               $this->ajaxReturn('1');
               }
             }

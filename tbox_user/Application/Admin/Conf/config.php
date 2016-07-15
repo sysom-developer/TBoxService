@@ -4,6 +4,6 @@ define('ip', 'http://localhost');
 define('imgurl', '/jxlhkj');
 define('layout_time',3);
 /*$admin_config=array(   
-'SESSION_OPTIONS'    => ['expire'=>3600]
+'COOKIE_EXPIRE'  =>  3600
 );
 return $admin_config;*/
