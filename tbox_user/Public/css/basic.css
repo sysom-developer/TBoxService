@@ -13,7 +13,7 @@
 	width: 100%;
 }
 .login-topBg {
-	background: url(../img/login_img.png) center center no-repeat #fff;
+	background: url(../images/login_img.png) center center no-repeat #fff;
 	height: 480px;
 	min-width: 1190px;
 }
@@ -106,7 +106,7 @@ a.btnStyle.btnregister:hover {
 }
 /*¼ʽʼ*/
 .login-topStyle3 {
-	background: url(../img/login_bg_white.png) center center repeat;
+	background: url(../images/login_bg_white.png) center center repeat;
 	width: 228px;
 	height: auto;
 	overflow: hidden;
