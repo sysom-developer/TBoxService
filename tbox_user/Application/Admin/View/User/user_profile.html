@@ -1,0 +1,90 @@
+<include file="Public/_header"/>
+
+
+
+<body>
+<script type="text/javascript">
+ $(document).ready(function() {
+  $("#regen-apikey").click(function(){
+    var apikey=$("#apikey").val();
+    $.ajax({
+    url : "{:U('User/changekey')}",
+    type : 'post',
+    success : function(result) {
+     $("#apikey").val(result);
+    }
+  });
+    
+  });
+  });
+
+
+</script>
+<div id="body-wrapper">
+  <include file="Public/sidebar"/>
+  <div id="main-content">
+    <noscript>
+    <div class="notification error png_bg">
+      <div>您的浏览器禁止使用或者不支持Javascript，请开启Javascript支持或者升级为更新的版本。</div>
+    </div>
+    </noscript>
+
+    <!-- End .shortcut-buttons-set -->
+    
+    <div class="clear"></div>
+    
+    <!-- here goes the main body view -->
+        <div class="content-box">
+      <div class="content-box-header">
+        <h3>帐户设置</h3>
+        <ul class="content-box-tabs">
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1">
+          <form action="/user/user_profile" name="form" method="post">
+          <div style="margin:0;padding:0;display:inline">
+      <input name="key" type="hidden" value="44b61484975803514ce8fc8b04b287ff" />
+      </div>
+            <fieldset>
+            <p>
+              <label>用户名</label>
+              <input class="text-input small-input disabled" type="text" id="username" name="username" value="{$records.name}" readonly />
+              <br />
+              <small>用户名不可修改</small>
+              </p>
+            <p>
+              <label>API KEY</label>
+              <input class="text-input medium-input disabled" type="text" id="apikey" name="apikey" value="{$records.0.apikey}" readonly />
+              <input id="regen-apikey" class="button" type="button" value=" 重新生成 " style=" top left repeat-x !important" />
+              <br />
+              <small>不可修改</small> 
+
+           
+            
+
+            
+            <p>
+              <input class="button" type="submit" value="  保存  " />
+            </p>
+            </fieldset>
+            <div class="clear"></div>
+          </form>        
+        </div>
+          </div>
+    </div>
+<script language="javascript" src="__ROOT__/Public/js/user_profile.js"></script>
+    
+    <div class="clear"></div>
+    
+    <div id="footer"> 
+      <!-- Remove this notice or replace it with whatever you want -->
+      &#169;Copyright 2015 嘉兴礼海电气有限公司  </div>
+    <!-- End #footer -->
+    
+  </div>
+</div>
+</body>
+<include file="Public/_footer"/>
+</html>

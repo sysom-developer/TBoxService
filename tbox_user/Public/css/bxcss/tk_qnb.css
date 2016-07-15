@@ -1,0 +1,21 @@
+  #plan{background-image:url(http://media.winbaoxian.com/static/images/n3/tk_quannengbao2015_bg.png)}
+              .logo{background-image:url(http://media.winbaoxian.com/static/images/n3/taikang/taikLogo.png);width:28%}
+              .blockDiv,.managerContact,.footer{background-color:#b6dcf1}
+              .planRuleText dt,.planRuleText dd,.formPartCont li,.blockInDiv{background-color: #fff}
+              .rulePop{background:none !important}
+              .rulePop a{background-color: #54abdb!important;color:#fff}
+              .blockInTitle{border-bottom:#b6dcf1 1px solid}
+              .blockInTitle i{background-color: #b6dcf1;color:#fff}
+              .planLine{background-color: #54abdb}
+              .planIco{color: #54abdb; background-color: #b6dcf1}
+              .kingPer p {background: #54abdb;color: #fff}
+              .kingPer b {background: #fff}
+              .kingPer .active {background: #edcd96;color: #ff9}
+              .plus, .minus {color: #d37f4a}
+              .managerPhoto{border:#b6dcf1 1px solid}
+              .managerIco{background:#fff;color:#b6dcf1}
+              .footer{color:#fff}
+              .planRuleText dd b{color:#f00}
+              .accident li{border-bottom:#b6dcf1 1px solid}
+              .rulePop{position: static; margin-top:0.4em;display: block}
+              .rulePop a{margin-left:0;margin-right:0.4em;}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link rel="stylesheet" href="__ROOT__/Public/css/bootstrap.css">
+<link rel="stylesheet" href="__ROOT__/Public/css/font-awesome.min.css">
+
+
+<script src="__ROOT__/Public/js/jquery-1.11.0.min.js"></script>
+<script src="__ROOT__/Public/js/jquery.validate.min.js"></script>
+<script src="__ROOT__/Public/js/jquery-form.js"></script>
+<script src="__ROOT__/Public/js/tooljs.js"></script>
+<script src="__ROOT__/Public/js/less-1.5.0.min.js"></script>
+<script src="__ROOT__/Public/js/jquery.cookie.js"></script>
+
+<script src="__ROOT__/Public/js/bootstrap.js"></script>
+<!--[if lt IE 9]>
+<script src="__ROOT__/Public/js/html5shiv.js"></script>
+<![endif]-->
+<style type="text/css" media="screen">
+  .login-form{
+   margin-top: 200px;
+   margin-left: 30%;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var name= $.cookie('name');
+
+    if(name!=null ){
+
+    $('#name').val(name);
+    }
+    
+    $("#loginform").validate({
+      //有错误时不提示,只让表框变色提示
+    /*  errorPlacement: function (error, element) {
+        //console.log(error,element);
+              element.parent().addClass("has-error");
+          }, */
+      rules:{
+        'name':{
+          required:true
+        },
+        'password':{
+          required:true
+        }
+      },
+      messages:{
+        'name':{
+          required:'请填写用户名'
+        },
+        'password':{
+          required:'请输入密码'
+        }
+      }
+    });
+ $("#loginform").ajaxForm({
+      url : '__CONTROLLER__/login',
+      success : function(result) {
+        if(result!='1')
+            alert(result);
+          else
+            window.location.href="{:U('Admin/Index/index')}";
+      }
+    });
+  });
+
+</script>
+</head>
+<body>
+<div class="logo">
+<img src="__PUBLIC__/img/bxbICon@3x.png" alt="">
+  
+</div>
+
+<div class="home-index">
+  <div class="container">
+    <div class="row">
+      <div class="comm-box ">
+        <div class="login-form">
+        <form class="form-horizontal" role="form" method="post" id="loginform">
+          <div class="form-group">
+            
+            <div class="col-sm-6">
+              <input type="text" name="name" id="name" class="form-control" placeholder="请输入用户名">
+            </div>
+          </div>
+          <div class="form-group">
+          
+            <div class="col-sm-6">
+              <input type="password" name="password" id="password"class="form-control"  placeholder="请输入密码">
+            </div>
+          </div>
+              <div class="form-group">
+          
+            <div class="col-sm-6">
+             
+              <input type="text" name="verify" class="form-control"  placeholder="请输入验证码"
+              style="width:58%;display: inline-block">
+              <img src="{:U('Admin/Login/verify')}" onclick="this.src='{:U('Admin/Login/verify')}?v='+Math.random();"  style="width:40%">
+            </div>
+          </div>
+ 
+             <div class="form-group">
+          
+            <div class="col-sm-6">
+             <button style="background-color:#FF7043;margin-left: 0;width:100%;border: 0px"type="submit" class="btn btn-primary">登录
+            </button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

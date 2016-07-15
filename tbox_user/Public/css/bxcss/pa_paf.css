@@ -1,0 +1,160 @@
+ #plan {
+                        background-image: url(http://media.winbaoxian.com/static/images/n3/ping_pinganfu.1_bg.png)
+                    }
+
+                    .tc {
+                        text-align: center
+                    }
+
+                    .logo {
+                        background-image: url(http://media.winbaoxian.com/static/images/n3/pingan/pinganLogo_.png)
+                    }
+
+                    .blockDiv, .managerContact, .footer {
+                        background-color: #bae29d
+                    }
+
+                    .planRuleText dt, .planRuleText dd, .formPartCont li, .blockInDiv {
+                        background-color: #fff
+                    }
+
+                    .rulePop {
+                        background: none !important
+                    }
+
+                    .rulePop a {
+                        background-color: #79aa56 !important;
+                        color: #fff
+                    }
+
+                    .blockInTitle {
+                        border-bottom: #bae29d 1px solid
+                    }
+
+                    .blockInTitle i {
+                        background-color: #bae29d;
+                        color: #fff
+                    }
+
+                    .planLine {
+                        background-color: #79aa56
+                    }
+
+                    .planIco {
+                        color: #79aa56;
+                        background-color: #bae29d
+                    }
+
+                    .kingPer p {
+                        background: #79aa56;
+                        color: #fff
+                    }
+
+                    .kingPer b {
+                        background: #fff
+                    }
+
+                    .kingPer .active {
+                        background: #edcd96;
+                        color: #ff9
+                    }
+
+                    .plus, .minus {
+                        color: #d37f4a
+                    }
+
+                    .managerPhoto {
+                        border: #bae29d 1px solid
+                    }
+
+                    .managerIco {
+                        background: #fff;
+                        color: #bae29d
+                    }
+
+                    .footer {
+                        color: #fff
+                    }
+
+                    .planRuleText dd b {
+                        color: #f00
+                    }
+
+                    .insureShow a {
+                        background: #bae29d
+                    }
+
+                    .insureAdd tr th {
+                        border-bottom: #bae29d 1px solid
+                    }
+
+                    .blockInDiv {
+                        padding: 0.5em 0;
+                        width: 96%
+                    }
+
+                    .insureShow {
+                        width: 40px;
+                        height: 20px;
+                        position: absolute;
+                        left: 50%;
+                        bottom: -20px;
+                        margin-left: -20px;
+                        z-index: 1;
+                        overflow: hidden
+                    }
+
+                    .insureShow a {
+                        width: 40px;
+                        height: 20px;
+                        display: block;
+                        padding-top: 20px;
+                        text-align: center;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: -25px;
+                        left: 0;
+                        color: #fff
+                    }
+
+                    .insureAdd {
+                        font-size: 0.8em;
+                        width: 100%;
+                        line-height: 24px
+                    }
+
+                    .insureAdd tr th {
+                        padding: 5px;
+                        line-height: 18px
+                    }
+
+                    .insureAdd tr td {
+                        border-bottom: #efefef 1px solid;
+                        border-right: #efefef 1px solid
+                    }
+
+                    .insureAdd tr td:last-child {
+                        border-right: none
+                    }
+
+                    .blockInTitle {
+                        margin-bottom: 0.5em
+                    }
+
+
+                    .titleLeft {
+                        text-align: left;
+                        padding-left: 10px
+                    }
+
+                    .comIcoText {
+                        margin-left: 0.8em;
+                        padding-right: 0.8em;
+                        font-size: 0.9em
+                    }
+                    .J_hasXinLi{display:none}
+                    .bb {
+                        padding-right: 24%
+                    }
+
+                    .J_hasAll b,.J_hasYw_noXl b,.J_noYw_hasXl b,.J_noAll b{font-size: 12px;color:#f00}

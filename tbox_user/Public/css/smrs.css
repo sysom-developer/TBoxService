@@ -1,0 +1,19 @@
+ #plan{background-image:url(http://media.winbaoxian.com/static/images/n3/sm_jixiangankang_bg.png)}
+              .logo{background-image:url(http://media.winbaoxian.com/static/images/n3/fude/fudeLogo_.png);width:33%}
+              .blockDiv,.managerContact,.footer{background-color:#ffa885}
+              .planRuleText dt,.planRuleText dd,.formPartCont li,.blockInDiv{background-color: #fff}
+              .rulePop{background:none !important}
+              .rulePop a{background-color: #ff6c1c!important;color:#fff}
+              .blockInTitle{border-bottom:#ffa885 1px solid}
+              .blockInTitle i{background-color: #ffa885;color:#fff}
+              .planLine{background-color: #ff6c1c}
+              .planIco{color: #ff6c1c; background-color: #ffa885}
+              .kingPer p {background: #ff6c1c;color: #fff}
+              .kingPer b {background: #fff}
+              .kingPer .active {background: #edcd96;color: #ff9}
+              .plus, .minus {color: #d37f4a}
+              .managerPhoto{border:#ffa885 1px solid}
+              .managerIco{background:#fff;color:#ffa885}
+              .footer{color:#fff}
+              .planRuleText dd b{color:#f00}
+              #profitDescShow{border:#ffa885 1px solid;border-radius: 10px; line-height: 2em}

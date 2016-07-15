@@ -1,0 +1,88 @@
+<include file="Public/_header"/>
+<script type="text/javascript" src="__PUBLIC__/js/admin_common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-form.js"></script>
+<script>
+    var saveFormURL="__URL__";
+  $(document).ready(function() {
+    $("a[id^=del_]").on('click',function() {
+      var id = $(this).attr('id');
+      id = id.split('_')[1];
+      if( confirm('确定删除') ) {
+        $.get("__URL__/delById_all",'ids='+id,function(data) {
+          if(data['status'] == 1) {
+            $("#row_"+id).hide();
+          } else {
+            alert(data);
+          }
+        });
+      }
+    });
+  });
+</script>
+<div class="home-index">
+  <div class="bao_menu">
+    <div class="first-child">
+      管理员管理
+    </div>
+       <div class="active">
+      管理员
+    </div>
+       <div class="unactive last-child" onclick="javascript:window.location.href='{:U('Admin/add')}'">
+      添加管理员
+    </div>
+  </div>
+  <div class="container">
+
+    <div class="row">
+
+  
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+                  <th>
+                      <input type="checkbox" name="check_all" id="check_all" onclick="selectall('ids[]');" />&nbsp;<label for="check_all">全选 | 序列号
+                  </th>
+            <th>登录名</th>
+            <th>用户组</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <volist name="records" id="admin">
+          <tr id="row_{$admin.id}">
+                  <td>
+                      <input type="checkbox" id="{$admin.id}" name="ids[]" value="{$admin.id}"/> &nbsp; 
+                      <label style="font-weight: normal;" for="{$admin.id}">{$admin.id}</label>
+                  </td> 
+            <td>{$admin.name}</td>
+            <td>{$admin.usergroup}</td>
+            <td class="opts">
+              <a href="{:U('Admin/update',array('id'=>$admin['id']))}">修改</a> &nbsp;|&nbsp;
+              <!-- <a href="{:U('Brand/delete',array('id'=>$brand['id']))}"class="fa fa-trash"></a> | -->
+              <a href="javascript:;" id="del_{$admin.id}" >删除</a>
+            </td>
+          </tr>
+          </volist>          
+        </tbody>
+        <tbody>
+                <tr>
+                  <td>
+                    <label for="check_all">全选/取消</label> &nbsp;|&nbsp;
+                    <a href="javascript:;" onclick="realdel_all('ids[]')" >删除</a>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+      </table>
+      <div class="pagination">
+        {$page}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<include file="Public/_footer"/>

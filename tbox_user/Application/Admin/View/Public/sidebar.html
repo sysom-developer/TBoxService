@@ -1,0 +1,49 @@
+  <script type="text/javascript">
+   $(document).ready(function() {
+  $(".{$controller_name}").addClass("current");
+  $(".{$action_name}").addClass("current");
+  $("#last_at").text($.cookie("last_at"));
+    $("#username").val($.cookie("name"));
+  $("#login_name").text($.cookie("name"));
+  
+  });</script>
+  <div id="sidebar">
+    <div id="sidebar-wrapper">
+      <!-- Sidebar with logo and menu -->
+     
+      <!-- Logo (221px wide) -->
+ 
+      <!-- Sidebar Profile links -->
+      <div id="profile-links"> 欢迎您, <a href="#" title="Edit your profile" id="login_name"></a><br />
+      您上次登录于 <span id="last_at"></span>     <br /><br />
+        <a href="{:U('Login/layout')}" title="Sign Out">注销</a> </div>
+      <ul id="main-nav">
+      
+        <!-- Accordion Menu -->
+        <li> <a href="{:U('Index/index')}" class="nav-top-item no-submenu index">
+          用户中心 首页 </a> 
+        </li>
+        
+<li> 
+<a href="#" class="nav-top-item no-submenu User">帐户 </a> 
+<ul>
+  <li><a class="user_profile" href="{:U('User/user_profile')}">我的帐户设置</a></li>
+    <li><a class="change_password" href="{:U('User/change_password')}">修改密码</a></li>
+          </ul>
+         </li>
+         
+        <li> <a href="#" class="nav-top-item no-submenu Device">
+          <!-- Add the class "current" to current menu item -->
+          我的设备 </a>
+          <ul>
+            <li><a class="new_device" href="{:U('Device/new_device')}">增加新设备</a></li>
+            <li><a class="devices" href="{:U('Device/devices')}">管理设备</a></li>
+            <li><a class="actions" href="{:U('Device/actions')}">管理动作</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- End #main-nav -->
+    </div>
+    
+  </div>
+  <!-- End #sidebar -->

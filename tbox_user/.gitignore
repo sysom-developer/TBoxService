@@ -1,0 +1,6 @@
+Application/Runtime/
+*.log
+config.inc.php
+.DS_Store
+Uploads
+Application/Common/Conf/config.php

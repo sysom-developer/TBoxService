@@ -1,0 +1,42 @@
+@charset "utf-8";
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select {
+	margin: 0;
+	padding: 0
+}
+.clearfix:after {
+	display: table;
+	content: '';
+	clear: both;
+}
+img {
+	border: 0;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+i {
+	font-style: normal;
+}
+::-webkit-input-placeholder {
+color:#585856;
+}
+body {
+	height: 100%;
+	font-size: 14px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;background-color:#000;
+}
+
+/* 关于我们*/
+.aboutus_container{max-width:640px;min-width:320px;height:auto;overflow:hidden;margin:0 auto;background-color:#EDEDEC;padding: 1em;}
+.aboutus_page{width:100%;height: 100%;overflow:hidden;background-size:100%;background-color:#fff;}
+.aboutus_dear_txt{padding-top: 10%;padding-bottom: 5%;text-align: center;font-size:2.5em;font-weight:bold;font-style:italic;}
+.aboutus_dear_txt a{color:#E94719;}
+.aboutus_content_txt{padding: 8%;text-align: center;font-size:1em;font-style:italic;}
+.aboutus_content_txt h2{color:#E94719;font-weight: bold;float: left;font-style:normal;}
+.aboutus_content_txt_a{padding: 1em;background-color: #F5CCB6;}
+.aboutus_content_txt_a a{color:#A73024;font-size:1.4em;}
+.aboutus_username{font-size: 1em;}
+.aboutus_inviter_company{padding: 8%;text-align: center;font-size: 1.2em;font-weight:bold;}
+.aboutus_inviter_company a{color:#E94719;}
+

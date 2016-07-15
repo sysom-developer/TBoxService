@@ -1,0 +1,18 @@
+  #plan{background-image:url(http://media.winbaoxian.com/static/images/n3/tpy_yinfaankang_bg.png)}
+              .logo{background-image:url(http://media.winbaoxian.com/static/images/n3/taipingyang/taipingyangLogo.png);width:33%}
+              .blockDiv,.managerContact,.footer{background-color:#bae29d}
+              .planRuleText dt,.planRuleText dd,.formPartCont li,.blockInDiv{background-color: #fff}
+              .rulePop{background:none !important}
+              .rulePop a{background-color: #79aa56!important;color:#fff}
+              .blockInTitle{border-bottom:#bae29d 1px solid}
+              .blockInTitle i{background-color: #bae29d;color:#fff}
+              .planLine{background-color: #79aa56}
+              .planIco{color: #79aa56; background-color: #bae29d}
+              .kingPer p {background: #79aa56;color: #fff}
+              .kingPer b {background: #fff}
+              .kingPer .active {background: #edcd96;color: #ff9}
+              .plus, .minus {color: #d37f4a}
+              .managerPhoto{border:#bae29d 1px solid}
+              .managerIco{background:#fff;color:#bae29d}
+              .footer{color:#fff}
+              .planRuleText dd b{color:#f00}

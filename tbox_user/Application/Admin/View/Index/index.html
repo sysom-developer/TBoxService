@@ -1,0 +1,70 @@
+<include file="Public/_header"/>
+<script type="text/javascript">
+var url="__ROOT__";
+var apikey="{$records.0.apikey}";
+</script>
+<div id="body-wrapper">
+<include file="Public/sidebar"/>
+  <div id="main-content">
+    <noscript>
+    <div class="notification error png_bg">
+      <div>您的浏览器禁止使用或者不支持Javascript，请开启Javascript支持或者升级为更新的版本。</div>
+    </div>
+    </noscript>
+    <!-- End .shortcut-buttons-set -->
+    
+    <div class="clear"></div>
+    
+    <!-- here goes the main body view -->
+     <div class="content-box">
+      <div class="content-box-header">
+        <h3>设备概要</h3>
+        <ul class="content-box-tabs">
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+          <form action="/user" name="form" method="post">
+          <div style="margin:0;padding:0;display:inline">
+    
+      </div>
+           <fieldset>
+           <table>
+            <thead>
+              <th>设备类型</th>
+              <th>设备名称</th>
+              <th>状态</th>
+              <th>最新数据</th>
+            </thead>
+            <tbody>
+           <foreach name="records" item="vo" >   
+               <tr>
+                <td>
+                自备设备      
+                 </td>
+                <td><a href="{:U('Device/devices')}?id="+"{$vo.device_id}">{$vo.title}</a></td>
+                <td><span class="deviceStatus unknown-label" device_id="{$vo.device_id}">状态未知</span></td>
+                <td><span class="lastUpdateStatus unknown-label" device_id="{$vo.device_id}">未知</span> <span class="deviceLastUpdate" device_id="{$vo.device_id}"></span></td>
+              </tr>
+               </foreach>
+                          </tbody>
+          </table>
+            </fieldset>
+         </form>
+      </div>
+    </div>
+
+    
+    <div class="clear"></div>
+    
+    <div id="footer"> <small>
+      <!-- Remove this notice or replace it with whatever you want -->
+     &#169;Copyright 2015 嘉兴礼海电气有限公司</small> </div>
+    <!-- End #footer -->
+    
+  </div>
+  </div>
+</body>
+<script src="__ROOT__/Public/js/user_index.js"></script>
+<include file="Public/_footer"/>
+</html>

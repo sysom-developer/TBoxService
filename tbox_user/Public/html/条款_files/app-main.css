@@ -1,0 +1,3012 @@
+/**/
+/***********************************************
+	-	             主要设置            	-
+***********************************************/
+body {
+  font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  /*max-width: 640px;*/
+  height: auto;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  color: #1c1c1c;
+  font-size: 14px;
+}
+.content {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* : 640px;*/
+}
+/*背景颜色设置*/
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-blue {
+  background-color: #00aeef;
+}
+.bg-disabled {
+  background-color: #9b9b9b;
+}
+/*颜色设置*/
+.color-white {
+  color: #ffffff;
+}
+.color-blue {
+  color: #00aeef;
+}
+.color-gray {
+  color: #c7c7c7;
+}
+.color-default {
+  color: #1c1c1c;
+}
+.color-a {
+  color: #2d2d2d;
+}
+/*浮动样式*/
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.affix {
+  position: fixed;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+/*字体大小控制*/
+.f12 {
+  font-size: 12px;
+}
+.f13 {
+  font-size: 13px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
+/*字体超出隐藏*/
+.text-hide {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*span 对齐控制*/
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+/*间距设置*/
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 20px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+.pl20 {
+  padding-left: 20px;
+}
+.pr10 {
+  padding-right: 10px;
+}
+.pr20 {
+  padding-right: 20px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.m10 {
+  margin: 10px;
+}
+.m20 {
+  margin: 20px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mb3 {
+  margin-bottom: 3px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.mb35 {
+  margin-bottom: 35px;
+}
+.mt90 {
+  margin-top: 90px;
+}
+.mt150 {
+  margin-top: 150px;
+}
+.mb80 {
+  margin-bottom: 80px;
+}
+/*失效控制*/
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #9b9b9b;
+}
+.iblock {
+  display: block;
+}
+.ihide {
+  display: none;
+}
+/**/
+/***********************************************
+	-	       loader 页面加载样式            	-
+***********************************************/
+.loader {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  z-index: 200;
+}
+.loader-classic {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 0px;
+  text-align: left;
+  -webkit-animation: loader-classic 1.3s linear infinite;
+  animation: loader-classic 1.3s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  z-index: 999;
+}
+.loader-classic span {
+  position: absolute;
+  vertical-align: top;
+  border-radius: 100%;
+  background: #000000;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 16px;
+  transform-origin: center 20px;
+  -webkit-transform-origin: center 20px;
+}
+.loader-classic span:nth-child(2) {
+  transform: rotate(36deg);
+  -webkit-transform: rotate(36deg);
+  opacity: 0.1;
+}
+.loader-classic span:nth-child(3) {
+  transform: rotate(72deg);
+  -webkit-transform: rotate(72deg);
+  opacity: 0.2;
+}
+.loader-classic span:nth-child(4) {
+  transform: rotate(108deg);
+  -webkit-transform: rotate(108deg);
+  opacity: 0.3;
+}
+.loader-classic span:nth-child(5) {
+  transform: rotate(144deg);
+  -webkit-transform: rotate(144deg);
+  opacity: 0.4;
+}
+.loader-classic span:nth-child(6) {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  opacity: 0.5;
+}
+.loader-classic span:nth-child(7) {
+  transform: rotate(216deg);
+  -webkit-transform: rotate(216deg);
+  opacity: 0.6;
+}
+.loader-classic span:nth-child(8) {
+  transform: rotate(252deg);
+  -webkit-transform: rotate(252deg);
+  opacity: 0.7;
+}
+.loader-classic span:nth-child(9) {
+  transform: rotate(288deg);
+  -webkit-transform: rotate(288deg);
+  opacity: 0.8;
+}
+.loader-classic span:nth-child(10) {
+  transform: rotate(324deg);
+  -webkit-transform: rotate(324deg);
+  opacity: 0.9;
+}
+@keyframes loader-classic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader-classic {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/**/
+/***********************************************
+	-	             头部 header         	-
+***********************************************/
+.header {
+  position: relative;
+  z-index: 100;
+  background: #00aeef;
+  color: #fff;
+  height: 44px;
+}
+.notice-btn {
+  float: left;
+  margin-left: 10px;
+  width: 27px;
+  height: 27px;
+  background: url("http://media.winbaoxian.com/static/images/sales/top-header-icon.png") no-repeat;
+  background-size: 27px;
+  background-position: 0 0;
+  margin-top: 10px;
+  position: relative;
+}
+.notice-btn .number {
+  min-width: 20px;
+  height: 20px;
+  line-height: 12px;
+  position: absolute;
+  top: -5px;
+  left: 14px;
+  padding: 5px;
+  background-color: #eb6877;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+.person-photo {
+  float: right;
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  background:url("http://media.winbaoxian.com/static/images/sales/top-person-center.png") center no-repeat;
+    background-size: 44px;
+    position:relative;
+    z-index: 10;
+    cursor: pointer;
+
+}
+.int-header {
+  position: relative;
+  z-index: 100;
+  background: #f7f7f7;
+  color: #1c1c1c;
+  box-shadow: 0 0 1px rgba(213, 213, 213, 0.75);
+  height: 44px;
+}
+.int-header h1 {
+  height: 44px;
+  line-height: 44px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.int-header .person-photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-position: 0 0;
+}
+.int-header .person-photo:active,
+.int-header .person-photo:hover {
+    background-position: 0 -43px;
+}
+.int-header .person-photo img {
+    width: 30px;
+    height: 30px;
+    margin: 7px;
+}
+
+.top-tab {
+  text-align: center;
+}
+.top-tab a {
+  background-color: #ffffff;
+  font-size: 14px;
+  height: 18px;
+  padding: 5px 12px;
+  border: 1px solid #00a0e9;
+}
+.top-tab a:first-child {
+  border-radius: 14px 0 0 14px;
+}
+.top-tab a:last-child {
+  border-radius: 0 14px 14px 0;
+}
+.top-tab a.active {
+  background-color: #00a0e9;
+  color: #fff;
+}
+
+.left-back-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -20px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  background: url("http://media.winbaoxian.com/static/images/sales/left-back-btn-bj.png") center no-repeat;
+  background-size: 8px;
+}
+/**/
+/***********************************************
+	-	             表单+按钮         	-
+***********************************************/
+.form-list .form-group {
+  position: relative;
+  border: 1px solid #cacaca;
+  background-color: #fff;
+  border-bottom: none;
+  padding: 5px 0;
+}
+.form-list .form-group:first-child {
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+.form-list .form-group:last-child {
+  border-radius: 0 0 3px 3px;
+  border-bottom: 1px solid #cacaca;
+}
+.form-list .form-group .mobile-icon,
+.form-list .form-group .code-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.form-list .form-group .label-text {
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  position: absolute;
+  left: 8px;
+  top: 0;
+}
+.form-icon .form-control {
+  padding-left: 46px;
+}
+.form-label .form-control {
+  width: 100%;
+  padding-left: 90px;
+}
+.letter-space {
+  letter-spacing: 29px;
+}
+.mobile-icon {
+  width: 46px;
+  height: 50px;
+  background: url("http://media.winbaoxian.com/static/images/sales/login-icon.png?v=1") no-repeat;
+  background-size: 46px;
+  background-position: 0 0;
+}
+.code-icon {
+  width: 46px;
+  height: 50px;
+  background: url("http://media.winbaoxian.com/static/images/sales/login-icon.png?v=1") no-repeat;
+  background-size: 46px;
+  background-position: 0 -50px;
+}
+/*输入框*/
+.form-control {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-appearance: none;
+}
+.form-control:focus {
+  border-color: transparent;
+  outline: 0;
+  color: #000000;
+}
+.form-control::-moz-placeholder {
+  color: #c7c7c7;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #c7c7c7;
+}
+.form-control::-webkit-input-placeholder {
+  color: #c7c7c7;
+}
+/*ios 取消内阴影*/
+input[type="text"] {
+  -webkit-appearance: none;
+}
+.code-input {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+.set-code-btn {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  height: 28px;
+  line-height: 14px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #00aeef;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+
+}
+input[type="button"]{
+    -webkit-appearance: none;
+}
+.set-code-btn.disabled {
+  background-color: #9b9b9b;
+}
+.btn {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+}
+.btn-sign-out {
+  background-color: #eb6466;
+}
+.submit-btn {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background-color: #00aeef;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+}
+.submit-btn.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #9b9b9b;
+}
+.btn-lyellow {
+  background-color: #f1ba3d;
+}
+/*错误提示*/
+.error-msg {
+  font-size: 12px;
+  color: #df2f31;
+  line-height: 30px;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  margin-top: 5px;
+}
+/*验证提示图标*/
+.verify-tip {
+  width: 17px;
+  height: 17px;
+  display: block;
+  background: url("http://media.winbaoxian.com/static/images/sales/verify-tip-icon.png") center no-repeat;
+  background-size: 17px;
+  position: absolute;
+  top: 16px;
+  right: 15px;
+}
+/*单选按钮选择*/
+.check-box-click {
+  position: relative;
+  padding-left: 22px;
+  color: #2d2d2d;
+  font-size: 12px;
+}
+.check-box-click .check-pic {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+}
+.check-box-click .check-pic.active {
+  background: #ffffff url("http://media.winbaoxian.com/static/images/sales/ticks.png") center no-repeat;
+  background-size: 11px;
+}
+.check-box-click input[type="checkbox"] {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  left: 0;
+}
+.edit-more-info {
+  background-color: #fff;
+  height: 37px;
+  line-height: 37px;
+  text-align: left;
+  padding-left: 44px;
+  width: 100%;
+  display: -webkit-box;
+}
+.right-label-text {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  height: 18px;
+  line-height: 18px;
+}
+/**/
+/***********************************************
+	-	             个人中心         	-
+***********************************************/
+.bg-person {
+    background: url("http://media.winbaoxian.com/static/images/sales/person-center-bj.jpg") top center no-repeat;
+    background-size: cover;
+}
+.top-person-info {
+    height: 210px;
+    position: relative;
+}
+.top-person-info .edit-person-info {
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    background: url("http://media.winbaoxian.com/static/images/sales/edit-icon.png") center no-repeat;
+    background-size: 24px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.top-person-info .person-counts {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0px;
+    text-align: center;
+}
+.top-person-info .person-counts .num {
+    color: #f36e70;
+}
+.bottom-fixed {
+    width: 100%;
+    /*max-width: 640px;*/
+    margin: 0 auto;
+    position: absolute;
+    bottom: 45px;
+}
+.person-info {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.person-img {
+    padding: 4px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: left;
+    margin-right: 25px;
+}
+.person-img .img-radiu{}
+.person-img .pic {
+    width: 90px;
+    height: 90px;
+    border: 3px solid #fff;
+    border-radius:45px;
+    -moz-border-radius:45px;
+    -webkit-border-radius:45px;
+    -o-border-radius:45px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    background-size: 84px;
+
+}
+.person-text {
+    color: #fff;
+    font-size: 15px;
+    line-height: 24px;
+    padding-top: 14px;
+}
+.lh24 {
+  line-height: 24px;
+}
+.ul-list li {
+  width: 100%;
+  padding: 10px 20px;
+  height: 50px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+  cursor: pointer;
+}
+.ul-list li:last-child {
+  border-bottom: 0;
+}
+.ul-list li a {
+  width: 100%;
+  height: 30px;
+  display: block;
+  text-align: left;
+  line-height: 30px;
+  color: #000;
+  background: url("http://media.winbaoxian.com/static/images/sales/right-lighticon-bj.png") right center no-repeat;
+  background-size: 8px;
+  position: relative;
+}
+.ul-list li a .tipNum {
+  padding: 0 3px;
+  height: 14px;
+  position: absolute;
+  top: -2px;
+  left: 13px;
+  background-color: #eb6877;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 50%;
+  line-height: 16px;
+  display: block;
+}
+.ul-list li .person-icon {
+  float: left;
+  margin-right: 8px;
+}
+/*个人中心图标选择设置*/
+.person-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: url("http://media.winbaoxian.com/static/images/sales/person-center-icon.png") no-repeat;
+  background-size: 25px;
+}
+.my-invite-icon {
+  background-position: 0 0;
+}
+.real-verif-icon {
+  background-position: 0 -25px;
+}
+.my-collect-icon {
+  background-position: 0 -50px;
+}
+.notice-center-icon {
+  background-position: 0 -75px;
+}
+.integral-exchange-icon {
+  background-position: 0 -100px;
+}
+.edit-person-info {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url("http://media.winbaoxian.com/static/images/sales/edit-icon.png") no-repeat;
+  background-size: 16px;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+.btn-login {
+  background-color: #00adef;
+}
+.btn-register {
+  background-color: #4ec8dd;
+}
+.person-name {
+  vertical-align: top;
+}
+/**/
+/***********************************************
+	-	             首页         	-
+***********************************************/
+/**/
+/*产品列表展示*/
+.pro-list {
+  width: 100%;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.pro-list li {
+  width: 33.33333%;
+  float: left;
+  padding: 0 8px;
+}
+.pro-list li .title {
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+  color: #030000;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+/*页面底部浮动展示*/
+.footer {
+  width: 100%;
+  height: 199px;
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  /*max-width: 640px;*/
+  z-index: 10;
+}
+.operate-btn {
+  width: 105px;
+  height: 105px;
+  background: url("http://media.winbaoxian.com/static/images/sales/operate-btn-bj.png") no-repeat;
+  background-size: 105px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+.nav-link {
+  height: 115px;
+  background: #08b0ef url("http://media.winbaoxian.com/static/images/sales/bottom-arrow-bj.png") top center no-repeat;
+  background-size: 160px 31px;
+  margin-top: -20px;
+  width: 100%;
+  display: -webkit-box;
+}
+.nav-link:after {
+  content: '';
+  clear: both;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.nav-link li {
+  text-align: center;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  white-space: nowrap;
+  margin-top: 25px;
+  width: 25%;
+}
+.nav-link li a {
+  color: #daebf2;
+  font-size: 12px;
+  display: block;
+}
+.nav-link li a.active {
+  color: #fff;
+  font-size: 14px;
+}
+.nav-link li a.active .icon {
+  margin-bottom: 10px;
+}
+.nav-link li a.active .home-icon {
+  background-position: 0 0;
+}
+.nav-link li a.active .check-terms-icon {
+  background-position: -48px 0;
+}
+.nav-link li a.active .collect-icon {
+  background-position: 0 -48px;
+}
+.nav-link li a.active .number-change-icon {
+  background-position: -48px -48px;
+}
+.icon {
+  width: 48px;
+  height: 48px;
+  background: url("http://media.winbaoxian.com/static/images/sales/nav-icon-bj.png") no-repeat;
+  background-size: 96px;
+  display: -webkit-box;
+  margin: 0 auto;
+}
+.home-icon {
+  background-position: 0 -96px;
+}
+.check-terms-icon {
+  background-position: -48px -96px;
+}
+.collect-icon {
+  background-position: 0 -144px;
+}
+.number-change-icon {
+  background-position: -48px -144px;
+}
+/*最小高度---浮动提示*/
+@media (max-height: 480px) {
+  .footer {
+    height: 139px;
+  }
+  .operate-btn {
+    width: 70px;
+    height: 70px;
+    background: url("http://media.winbaoxian.com/static/images/sales/operate-btn-bj.png") no-repeat;
+    background-size: 70px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+  }
+  .nav-link li {
+    margin-top: 20px;
+  }
+  .nav-link li a.active {
+    color: #fff;
+    font-size: 14px;
+  }
+  .nav-link li a.active .icon {
+    margin-bottom: 5px;
+  }
+  .nav-link li a.active .home-icon {
+    background-position: 0 0;
+  }
+  .nav-link li a.active .check-terms-icon {
+    background-position: -40px 0;
+  }
+  .nav-link li a.active .collect-icon {
+    background-position: 0 -40px;
+  }
+  .nav-link li a.active .number-change-icon {
+    background-position: -40px -40px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    background: url("http://media.winbaoxian.com/static/images/sales/nav-icon-bj.png") no-repeat;
+    background-size: 80px;
+    display: -webkit-box;
+    margin: 0 auto;
+  }
+  .home-icon {
+    background-position: 0 -40px;
+  }
+  .check-terms-icon {
+    background-position: -40px -80px;
+  }
+  .collect-icon {
+    background-position: 0 -120px;
+  }
+  .number-change-icon {
+    background-position: -40px -120px;
+  }
+}
+/**/
+/***********************************************
+	-	         个人中心--通知中心         	-
+***********************************************/
+/**/
+.top-header-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.blue-back-btn {
+  background: url("http://media.winbaoxian.com/static/images/sales/notice-center-icon.png") center no-repeat;
+  background-size: 40px;
+  background-position: 0 0;
+}
+.right-top-edit {
+  background: url("http://media.winbaoxian.com/static/images/sales/notice-center-icon.png") center no-repeat;
+  background-size: 40px;
+  background-position: 0 -40px;
+  right: 5px;
+}
+/*通知列表展示*/
+.notice-dl {
+  width: 100%;
+  padding: 0 14px;
+  overflow: hidden;
+}
+.notice-dl dt {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #000407;
+  height: 32px;
+  line-height: 40px;
+  width: 100%;
+  clear: both;
+}
+.notice-dl dd {
+  background-color: #fff;
+  padding: 6px 8px;
+  margin-bottom: 13px;
+  overflow: hidden;
+}
+.left-pic {
+  width: 58px;
+  height: 58px;
+  float: left;
+  position: relative;
+}
+.left-pic .new-notice-tip {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -2px;
+  right: -2px;
+  background-color: #eb6877;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.right-info {
+  width: 100%;
+  padding-left: 68px;
+  position: relative;
+}
+.right-info .notice-info {
+  width: 100%;
+  padding-right: 60px;
+}
+.right-info .notice-info h2 {
+  font-size: 15px;
+}
+.right-info .change-btn {
+  width: 21px;
+  height: 21px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 24px;
+}
+.right-info .change-btn.active {
+  background-image: url("http://media.winbaoxian.com/static/images/sales/notice-center-icon.png");
+  background-size: 40px;
+  background-position: -10px -88px;
+}
+.right-info .notice-time {
+  float: right;
+  font-size: 12px;
+  color: #000405;
+}
+.pb50 {
+  padding-bottom: 50px;
+}
+.lh18 {
+  line-height: 18px;
+}
+.no-mb {
+  margin-bottom: 0!important;
+}
+.notice-operate {
+  width: 100%;
+  height: 50px;
+  display: block;
+  border-top: 1px solid #dcdcdc;
+  background-color: #f7f7f7;
+  position: fixed;
+  bottom: 0;
+  /*max-width: 640px;*/
+}
+.detele-notice-btn {
+  background: url("http://media.winbaoxian.com/static/images/sales/notice-center-icon.png") center no-repeat;
+  background-size: 40px;
+  background-position: 0 -120px;
+  right: 5px;
+}
+/*弹出提示框*/
+.full-screen {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.51);
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.full-dialog {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: none;
+  position: fixed;
+  height: 150px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -40%;
+  z-index: 210;
+}
+.full-dialog h2 {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.full-dialog button {
+  display: inline-block;
+}
+.full-dialog p {
+  padding: 0 27px;
+}
+.full-dialog .dialog-no {
+  float: left;
+  padding: 10px 16px;
+  font-size: 15px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #cacaca;
+  color: #1dafec;
+  background-color: #ffffff;
+}
+.full-dialog .dialog-ok {
+  float: right;
+  padding: 10px 16px;
+  font-size: 15px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #1dafec;
+  color: #fff;
+  background-color: #1dafec;
+}
+.mt40 {
+  margin-top: 40px;
+}
+/**/
+/***********************************************
+	-	             选择产品            	-
+***********************************************/
+/*搜索栏目板块*/
+/*搜索栏目板块*/
+.search {
+    padding: 9px 10px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-flex: 1;
+}
+.search .search-input {
+    border: 1px solid #e1e1e1;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    height: 32px;
+    display: block;
+    line-height: 32px;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    color: #a8a8a8;
+    font-size: 12px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.search .search-input.active {
+    border-color: #00a0e9;
+}
+.search .search-input .form-control {
+    height: 31px;
+    padding: 5px 8px;
+    line-height: 31px;
+    font-size: 12px;
+    padding-left: 30px;
+}
+.search-label {
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    margin-left: -22px;
+    z-index: 100;
+    text-align: center;
+    color: #e1e1e1;
+    font-size: 12px;
+}
+.search-label.active {
+    text-indent: -999em;
+    -webkit-animation: searchleft .6s ease both;
+    animation: searchleft .6s ease both;
+}
+.search-input.active {
+    -webkit-animation: searchtop .6s ease both;
+    animation: searchtop .6s ease both;
+}
+.search-input.active .search-label {
+    text-indent: -999em;
+    -webkit-animation: searchleft .6s ease both;
+    animation: searchleft .6s ease both;
+}
+@keyframes searchleft {
+    0% {
+        left: 50%;
+        margin-left: -22px;
+    }
+    100% {
+        left: 20px;
+        margin-left: -11px;
+    }
+}
+@-webkit-keyframes searchleft {
+    0% {
+        left: 50%;
+        margin-left: -22px;
+    }
+    100% {
+        left: 20px;
+        margin-left: -11px;
+    }
+}
+.search-title {
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    line-height: 32px;
+}
+.search-icon {
+  width: 15px;
+  height: 15px;
+  background: url("http://media.winbaoxian.com/static/images/sales/search-icon.png") no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 3px;
+    margin-top: 9px;
+    float: left;
+}
+/*底部菜单导航*/
+.footer-nav {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto;
+  /*max-width: 640px;*/
+  -webkit-animation: showdown .6s ease both;
+  animation: showdown .6s ease both;
+  z-index: 100;
+}
+.footer-nav .nav-link {
+  background: #08b0ef url("http://media.winbaoxian.com/static/images/sales/bottom-arrow-sm-bj.png") top center no-repeat;
+  background-size: 70px 17px;
+  height: 95px;
+}
+.footer-nav .nav-link li {
+  margin-top: 15px;
+}
+.footer-nav.showUp {
+  -webkit-animation: showup .6s ease both;
+  animation: showup .6s ease both;
+}
+@keyframes showup {
+  0% {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -webkit-transform: translateY(75px);
+    -o-transform: translateY(75px);
+  }
+}
+@-webkit-keyframes showup {
+  0% {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -webkit-transform: translateY(75px);
+    -o-transform: translateY(75px);
+  }
+}
+@keyframes showdown {
+  100% {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  0% {
+    transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -webkit-transform: translateY(75px);
+    -o-transform: translateY(75px);
+  }
+}
+@-webkit-keyframes showdown {
+  100% {
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  0% {
+    transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -webkit-transform: translateY(75px);
+    -o-transform: translateY(75px);
+  }
+}
+.down-nav-btn {
+  width: 49px;
+  height: 49px;
+  margin: 0 auto;
+  background-color: #00aeef;
+  border-radius: 50%;
+  position: relative;
+  z-index: 999;
+  margin-bottom: 15px;
+  background-image: url("http://media.winbaoxian.com/static/images/sales/down-nav-icon.png");
+  background-size: 49px;
+  background-position: 0 0;
+}
+.down-nav-btn.hideDown {
+  -webkit-animation: hidedown .6s ease both;
+  animation: hidedown .6s ease both;
+}
+@keyframes hidedown {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes hidedown {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+/*产品展示*/
+.pro-ul {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    /*border-top: 1px solid #e1e1e1;*/
+}
+.pro-ul li {
+    width: 100%;
+    background-color: #fff;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.pro-ul li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e1e1e1;
+}
+.pro-ul li:active,.pro-ul li:hover{
+    background: #e1e1e1;
+}
+.pro-ul li .pro-left {
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    float: left;
+    margin-right: 8px;
+}
+.pro-ul li .pro-left img {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    /*border:1px solid #002e73;*/
+}
+.pro-ul li .pro-right {
+    position: relative;
+}
+.pro-ul li:last-child{
+    border-bottom: 1px solid #e1e1e1;
+ }
+.pro-ul li:last-child a{
+    border-bottom: 0px;
+}
+.pro-info {
+    width: 100%;
+    background: url("http://media.winbaoxian.com/static/images/sales/right-lighticon-bj.png") right center no-repeat;
+    background-size: 10px;
+}
+.pro-info h4 {
+    font-size: 16px;
+    color: #000306;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.pro-info p {
+    font-size: 13px;
+    line-height: 16px;
+    padding-right: 20px;
+    color: #989898;
+}
+.data-num {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    font-size: 11px;
+    color: #000306;
+}
+.top-fixed {
+    width: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.menu-fixed {
+    width: 100%;
+    display: block;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    z-index: 100;
+    padding-top: 10px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.menu-iblock {
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+
+/**/
+/*产品切换效果*/
+/**/
+.swiper-container {
+  width: 100%;
+  /*max-width: 640px;*/
+  height: 95px;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  display: block;
+}
+@media screen and (max-width: 374px) {
+    .pro-ul li a {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 509px) {
+    .pro-ul li a {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+}
+@media screen and (min-width: 510px) and (max-width: 736px) {
+    .pro-ul li a {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+.swiper-slide {
+  opacity: 1;
+  display: block;
+}
+.swiper-slide-visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.swiper-slide-active {
+  top: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.swiper-slide .title {
+  font-style: italic;
+  font-size: 42px;
+  margin-top: 80px;
+  margin-bottom: 0;
+  line-height: 45px;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 8px;
+  background: #aaa;
+  margin-right: 8px;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  opacity: 0;
+  position: relative;
+  top: -50px;
+}
+.swiper-visible-switch {
+  opacity: 1;
+  top: 0;
+  background: #aaa;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+.swiper-img {
+  padding: 0 5px;
+  overflow: hidden;
+  text-align: center;
+}
+.swiper-img .pro-img {
+  height: 75px;
+  width: auto;
+  display: inline-block;
+  overflow: hidden;
+}
+.swiper-img .pic-item {
+  width: 100%;
+    height: 75px;
+    overflow: hidden;
+  display: block;
+  border-radius: 5px;
+  background-color: transparent;
+}
+/*新的切换效果+产品菜单展示*/
+.pro-container {
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.caret-down {
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  display: block;
+  margin: 0 auto;
+}
+.pro-wrapper {
+  width: 1500px;
+  padding: 0 10px;
+  height: 85px;
+  position: relative;
+}
+.pr-slide {
+  width: 130px;
+  height: 75px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+.pr-slide .logo-pic {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/**/
+/***********************************************
+	-	             积分            	-
+***********************************************/
+/*兑换档案*/
+.search-other {
+  width: 100%;
+  height: 40px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  overflow: hidden;
+  position: relative;
+}
+.search-other .search-submit {
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  right: 2px;
+  top: 5px;
+  border-left: 1px solid #e2e2e2;
+  padding-left: 5px;
+  text-indent: -9999px;
+  background: #ffffff url("http://media.winbaoxian.com/static/images/sales/case-icon.png") right no-repeat;
+  background-size: 25px;
+  background-position: 0 0;
+}
+/*档案搜索条目*/
+.search-nav {
+  width: 100%;
+  display: -webkit-box;
+}
+.search-nav li {
+  text-align: center;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+.search-nav li a {
+  color: #8b8b8c;
+  line-height: 30px;
+  height: 30px;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+}
+.search-nav li a.active {
+  color: #00aeef;
+}
+.search-nav li .down-icon {
+  width: 16px;
+  height: 16px;
+  background: url("http://media.winbaoxian.com/static/images/sales/case-icon.png") right no-repeat;
+  background-size: 25px;
+  background-position: 0 -100px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 7px;
+  float: right;
+}
+/*档案搜索列表*/
+.case-ul {
+  border: 1px solid #d7d7d7;
+  border-bottom: 0;
+}
+.case-ul li {
+  border-bottom: 1px solid #d7d7d7;
+  background-color: #fff;
+  padding: 15px;
+  width: 100%;
+  overflow: hidden;
+}
+.case-ul li .case-info {
+  float: left;
+}
+.case-ul li .case-more {
+  float: right;
+  padding: 6px 15px;
+  background-color: #00aeef;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
+  line-height: 14px;
+  margin-top: 5px;
+}
+.case-time {
+  color: #c7c7c7;
+  font-size: 10px;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+/*积分悬浮底部菜单*/
+.case-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  border-top: 1px solid #cacaca;
+  background-color: #f7f7f7;
+}
+.case-footer-nav {
+  width: 100%;
+  display: -webkit-box;
+}
+.case-footer-nav li {
+  text-align: center;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  height: 50px;
+}
+.case-footer-nav li a {
+  width: 100%;
+  height: 50px;
+  color: #8b8b8c;
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+}
+.case-footer-nav li a .rank-icon {
+  background-image: url("http://media.winbaoxian.com/static/images/sales/case-icon.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 0 -125px;
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin:0 auto;
+}
+.case-footer-nav li a .case-icon {
+  background-image: url("http://media.winbaoxian.com/static/images/sales/case-icon.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 0 -75px;
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin:0 auto;
+}
+.case-footer-nav li a .share-icon {
+  background-image: url("http://media.winbaoxian.com/static/images/sales/case-icon.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 0 -175px;
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin:0 auto;
+}
+.case-footer-nav li a .love-icon {
+  background-image: url("http://media.winbaoxian.com/static/images/sales/case-icon.png");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 0 -225px;
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin:0 auto;
+}
+.case-footer-nav li a .integral-search-icon {
+    background-image: url("http://media.winbaoxian.com/static/images/sales/case-icon.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 0 -275px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 0 auto;
+}
+
+.case-footer-nav li a.active {
+  color: #00aeef;
+}
+.case-footer-nav li a.active .rank-icon {
+  background-position: 0px -150px;
+}
+.case-footer-nav li a.active .case-icon {
+  background-position: 0 -50px;
+}
+.case-footer-nav li a.active .share-icon {
+  background-position: 0 -200px;
+}
+.case-footer-nav li a.active .love-icon {
+  background-position: 0 -250px;
+}
+.case-footer-nav li a.active .integral-search-icon {
+    background-position: 0 -300px;
+}
+/*积分兑换产品列表*/
+.change-score-list li {
+  padding: 10px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: #ffffff url("http://media.winbaoxian.com/static/images/sales/right-lighticon-bj.png") 96% center no-repeat;
+  background-size: 10px;
+}
+.change-score-list li h2 {
+  color: #000;
+  font-size: 16px;
+  line-height: 18px;
+}
+.change-score-list li h2 small {
+  color: #8b8b8c;
+  font-size: 14px;
+  display: block;
+}
+.change-score-list li .s-text {
+  color: #c7c7c7;
+  font-size: 10px;
+}
+.my-score-info {
+  width: 90%;
+  height: 65px;
+  margin: 0 auto;
+  background: #73c4d1 url("http://media.winbaoxian.com/static/images/sales/my-score-icon.png") no-repeat;
+  -moz-border-radius: 33px;
+  -webkit-border-radius: 33px;
+  border-radius: 33px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+.my-score-text {
+  font-size: 14px;
+  padding-top: 5px;
+  display: inline-block;
+  line-height: 28px;
+}
+.f24 {
+  font-size: 24px;
+}
+.my-score-pic {
+  width: 65px;
+  height: 65px;
+  float: left;
+  background: url("http://media.winbaoxian.com/static/images/sales/my-score-icon.png") no-repeat;
+}
+.s-icon {
+  width: 56px;
+  height: 56px;
+  display: block;
+  float: left;
+  background: url("http://media.winbaoxian.com/static/images/sales/score-icon.png") no-repeat;
+  background-size: 56px;
+  margin-right: 10px;
+}
+.p-icon {
+  background-position: 0 0;
+}
+.g-icon {
+  background-position: 0 -56px;
+}
+.c-icon {
+  background-position: 0 -112px;
+}
+/*伙伴查询*/
+.f-detail {
+  padding: 10px 12px;
+}
+.f-detail .f-info dt {
+  line-height: 24px;
+  padding-left: 20px;
+}
+.f-detail .f-info dd {
+  border: 1px solid #d8d8d8;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.f-detail .f-info .f-line-box {
+  display: block;
+  padding: 8px 20px;
+  line-height: 24px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.f-detail .f-info .f-line-box:last-child {
+  border-bottom: 0;
+  padding-top: 5px;
+}
+.f-detail .f-info .f-line-box .my-item-up {
+  line-height: 40px;
+  height: 40px;
+  float: left;
+}
+.f-detail .f-info .f-line-box .how-up-btn {
+  float: right;
+  line-height: 40px;
+  color: #00aeef;
+}
+.f-detail .f-info .f-line-box img {
+  margin-left: 10px;
+  float: right;
+  width: 35px;
+}
+.f-detail span.tit {
+  display: block;
+  width: 100%;
+  padding-left: 20px;
+  margin: 1.5% auto 0;
+  line-height: 2.2;
+}
+.f-detail .wrap-box {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px #d8d8d8;
+  overflow: hidden;
+  font-size: 14px;
+}
+.f-detail .wrap-box .th {
+  line-height: 40px;
+  background: #e8e8e8;
+  border-bottom: 1px solid #d8d8d8;
+}
+.f-detail .wrap-box .th span {
+  float: left;
+  display: block;
+  width: 25%;
+  text-align: center;
+}
+.f-detail .wrap-box .tr {
+  line-height: 50px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.f-detail .wrap-box .tr span {
+  float: left;
+  display: block;
+  width: 25%;
+  text-align: center;
+}
+.f-detail .wrap-box > div:last-child {
+  border-bottom: none;
+}
+.f-detail .wrap-box .td3 span:nth-child(2) {
+  width: 45%;
+}
+/**/
+/***********************************************
+	-	           通用弹出窗控制            	-
+***********************************************/
+/*弹出遮罩背景层*/
+.full-model {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  -webkit-box-flex: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.full-detail {
+  width: 100%;
+  padding: 0px 15px 0 15px;
+  position: absolute;
+  top: 50%;
+  margin-top: -208px;
+}
+.policy-detail {
+  width: 100%;
+  padding: 0px 15px 0 15px;
+  position: absolute;
+  top: 50%;
+  margin-top: -208px;
+}
+.policy-dl {
+  background-color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.policy-dl dt {
+  padding-left: 15px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #00aeef;
+}
+.policy-dl dd {
+  padding-left: 15px;
+  min-height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  color: #292929;
+  background-color: #fff;
+  border-bottom: 1px solid #d8d8d8;
+}
+.close-btn {
+  width: 26px;
+  height: 26px;
+  background: url("http://media.winbaoxian.com/static/images/sales/close-icon.png") center no-repeat;
+  background-size: 26px;
+  display: block;
+  position: absolute;
+  right: 7px;
+  top: -10px;
+}
+.full-table {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.full-table thead th {
+  width: 33.333%;
+  height: 34px;
+  line-height: 34px;
+  background-color: #e8e8e8;
+  color: #292929;
+  border: 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.full-table tbody td {
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  color: #292929;
+  border: 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.full-table tbody td img {
+  width: 35px;
+  height: auto;
+  margin: 0 auto;
+}
+.full-table tbody tr:last-child td {
+  border: 0;
+}
+/**/
+/***********************************************
+	-	           积分兑换详情            	-
+***********************************************/
+/*套餐选择*/
+.plans-info {
+  padding: 0 12px;
+  height: auto;
+  overflow: hidden;
+}
+.plans-info .info-top-text {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  background-color: #479fe6;
+}
+.plans-info .sta-info-bj {
+  width: 100%;
+  height: 133px;
+  background: url("http://media.winbaoxian.com/static/images/sales/sta-info-bj.png") center no-repeat;
+  background-size: 100% 133px;
+  text-align: center;
+  color: #fff;
+  padding-top: 80px;
+  line-height: 22px;
+}
+/*套餐四个板块*/
+.plans-nav {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: -webkit-box;
+}
+.plans-nav li {
+  text-align: center;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+  -ms-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+}
+.plans-nav li.active .plans-nav-text {
+  color: #00aeef;
+  font-size: 14px;
+}
+.plans-nav li.active .eco-icon {
+  background-position: 0 0;
+}
+.plans-nav li.active .sta-icon {
+  background-position: 0 -55px;
+}
+.plans-nav li.active .lux-icon {
+  background-position: 0 -110px;
+}
+.plans-nav li.active .sup-icon {
+  background-position: 0 -165px;
+}
+.plans-nav .plans-link {
+  width: 100%;
+  display: inline-block;
+}
+.plans-nav .plans-nav-text {
+  color: #cacaca;
+  font-size: 12px;
+}
+.plans-nav .plans-icon {
+  width: 55px;
+  height: 55px;
+  background: url("http://media.winbaoxian.com/static/images/sales/plans-icon.png") no-repeat;
+  background-size: 110px;
+  display: block;
+  margin-bottom: 10px;
+}
+.plans-nav .eco-icon {
+  background-position: -55px 0;
+}
+.plans-nav .sta-icon {
+  background-position: -55px -55px;
+}
+.plans-nav .lux-icon {
+  background-position: -55px -110px;
+}
+.plans-nav .sup-icon {
+  background-position: -55px -165px;
+}
+.plans-five-nav .plans-icon {
+  width: 50px;
+  height: 50px;
+  background: url("http://media.winbaoxian.com/static/images/sales/plans-icon.png") no-repeat;
+  background-size: 100px;
+  display: block;
+  margin-bottom: 10px;
+}
+.plans-five-nav li.active .plans-nav-text {
+  color: #00aeef;
+  font-size: 14px;
+}
+.plans-five-nav li.active .eco-icon {
+  background-position: 0 0;
+}
+.plans-five-nav li.active .sta-icon {
+  background-position: 0 -50px;
+}
+.plans-five-nav li.active .lux-icon {
+  background-position: 0 -100px;
+}
+.plans-five-nav li.active .sup-icon {
+  background-position: 0 -150px;
+}
+.plans-five-nav li.active .entry-level-icon {
+  background-position: 0 -200px;
+}
+.plans-five-nav .eco-icon {
+  background-position: -50px 0;
+}
+.plans-five-nav .sta-icon {
+  background-position: -50px -50px;
+}
+.plans-five-nav .lux-icon {
+  background-position: -50px -100px;
+}
+.plans-five-nav .sup-icon {
+  background-position: -50px -150px;
+}
+.plans-five-nav .entry-level-icon {
+  background-position: -50px -200px;
+}
+
+.plans-form {
+  width: 100%;
+  padding: 0 12px;
+}
+.form-top-info {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  overflow: hidden;
+  line-height: 50px;
+  background-color: #fff;
+}
+.form-top-info .sup-man-pic {
+  width: 50px;
+  height: 50px;
+  background: url("http://media.winbaoxian.com/static/images/sales/superMan.jpg") no-repeat;
+  background-size: 50px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.form-list {
+  width: 100%;
+}
+/*填写保单*/
+.form-detail {
+  width: 100%;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.form-detail li {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  line-height: 25px;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+}
+.form-detail li:first-child {
+  border-top: 0;
+}
+.form-detail li .left-label {
+  width: 28%;
+  float: left;
+}
+.form-detail li input.itext {
+  width: 72%;
+  line-height: 25px;
+  float: right;
+}
+.form-detail li .l-item {
+  display: inline-block;
+}
+.form-detail li label {
+  line-height: 25px;
+}
+.form-detail li input.r-input {
+ width: 15px;
+height: 15px;
+margin-right: 5px;
+appearance:button;
+-moz-appearance:button;
+-webkit-appearance: button;
+background: #fff;
+border:1px solid #e1e1e1;
+margin-top: 3px;
+float: left;
+border-radius: 7px;
+}
+.form-detail li input.r-input:checked{
+	background-color: #ccc;	
+}
+.form-detail li select {
+  display: block;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  margin-bottom: 10px;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
+  font-size: 14px;
+}
+.form-detail li .street {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  color: #000;
+  padding-left: 8px;
+}
+.form-detail li .street::-webkit-input-placeholder {
+  color: #000;
+}
+.form-detail li .address-msg {
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+  padding-left: 10px;
+  color: #929292;
+}
+.space-3 {
+  letter-spacing: 5px;
+}
+.plans-menu-ul {
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+.plans-menu-ul li {
+  width: 50%;
+  float: left;
+  margin-bottom: 6px;
+}
+.plans-menu-ul li:nth-of-type(2n+1) {
+  padding-right: 3px;
+}
+.plans-menu-ul li:nth-of-type(2n) {
+  padding-left: 3px;
+}
+.plans-menu-ul li .first,
+.plans-menu-ul li .second,
+.plans-menu-ul li .third,
+.plans-menu-ul li .forth {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  line-height: 20px;
+}
+.plans-menu-ul li .first {
+  background: #fb667a;
+}
+.plans-menu-ul li .second {
+  background: #479fe6;
+}
+.plans-menu-ul li .third {
+  background: #a86fce;
+}
+.plans-menu-ul li .forth {
+  background: #ff8a45;
+}
+.plans-menu-ul li .pic {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+/*成功与否弹出提示框*/
+.operate-dig {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+  overflow: hidden;
+}
+.operate-dig .alert {
+  text-align: center;
+  color: red;
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  line-height: 28px;
+}
+.close-btn-blue {
+  width: 26px;
+  height: 26px;
+  background: #00aeef;
+  color: #fff;
+  font-size: 30px;
+  line-height: 26px;
+  display: block;
+  position: absolute;
+  font-weight: normal;
+  text-align: center;
+  right: 7px;
+  top: -10px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+}
+.next-click {
+  overflow: hidden;
+  padding: 0 39px;
+  margin-bottom: 20px;
+}
+.next-click .continue {
+  width: 70px;
+  height: 70px;
+  display: block;
+  float: left;
+  background: #00aeef;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  line-height: 68px;
+}
+.next-click .last {
+  width: 66px;
+  height: 66px;
+  display: block;
+  float: right;
+  border: 2px solid #00aeef;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  color: #00aeef;
+  line-height: 68px;
+}
+/**/
+/***********************************************
+	-	           分享邀请码            	-
+***********************************************/
+.invite-detail .tab {
+  width: 60%;
+  height: 35px;
+  text-align: center;
+  border: 1px solid #00aeef;
+  border-radius: 20px;
+  margin: 15px auto;
+  background: #fff;
+  overflow: hidden;
+}
+.invite-detail .tab a {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 35px;
+  line-height: 35px;
+}
+.invite-detail .tab a:last-child.active {
+  border-radius: 0 16px 16px 0;
+}
+.invite-detail .tab .active {
+  color: #fff;
+  background: #00aeef;
+  border-radius: 16px 0 0 16px;
+}
+.invite-detail .share {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 10px 0 10px 0;
+}
+.invite-detail .tip-text li {
+  padding: 10px 0 5px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+}
+.invite-detail .tip-text li img {
+  display: block;
+  float: left;
+  vertical-align: top;
+}
+.invite-detail .tip-text li .img1 {
+  margin: -4px 20px 0 5%;
+}
+.invite-detail .tip-text li .img2 {
+  margin: 0 20px 0 5%;
+}
+.invite-detail .out {
+  text-align: center;
+}
+.invite-detail .out img {
+  display: inline-block;
+  margin: 10px auto;
+}
+.invite-detail .tab-content {
+  padding: 0 20px;
+}
+.rules-detail {
+  padding: 15px;
+}
+/*产品详情头部导航页面*/
+.top-shart-link {
+  width: 70px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  display: block;
+  text-align: center;
+}
+.top-shart-link a {
+  width: 35px;
+  height: 40px;
+  background: url("http://media.winbaoxian.com/static/images/sales/top-share-icon.jpg") top center no-repeat;
+  background-size: 70px;
+  padding-top: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+  float: left;
+    color: #545454;
+}
+.top-shart-link .collect-link {
+  background-position: 0 0;
+}
+.top-shart-link .share-link {
+  background-position: -35px 0;
+}
+/**/
+/***********************************************
+	-	           404 错误页面            	-
+***********************************************/
+.error-main {
+  width: 100%;
+  height: auto;
+  padding: 44px;
+  overflow: hidden;
+}
+.error-info {
+  border-top: 2px solid #dadada;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+.error-info li {
+  width: 100%;
+  padding-left: 85px;
+  position: relative;
+}
+.error-info li .error-left {
+  position: absolute;
+  left: 15px;
+}
+.error-info li em {
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+  font-size: 18px;
+  background-color: #dcdcdc;
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.error-back {
+  text-align: center;
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  width: 100%;
+  height: 40px;
+}
+.error-back .refresh,
+.error-back .back {
+  width: 75px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 24px;
+  background: url("http://media.winbaoxian.com/static/images/sales/error-icon.png") no-repeat;
+  background-size: 20px;
+  display: inline-block;
+  text-align: left;
+}
+.error-back .refresh {
+  background-position: 0 0;
+}
+.error-back .back {
+  background-position: 0 -20px;
+  margin-left: 10px;
+}
+/**/
+/***********************************************
+	-	           查条款            	-
+***********************************************/
+.terms-company {
+  padding: 20px 20px 10px 20px;
+  line-height: 24px;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+}
+.terms-name {
+  padding-bottom: 10px;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+.terms-ul {
+  padding: 5px 10px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.terms-ul li {
+  color: #000;
+}
+.terms-ul li .terms-title {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  height: 37px;
+  line-height: 37px;
+    font-size: 16px;
+  padding: 0 0 0 10px;
+  font-family: "幼圆", "黑体", 'Microsoft YaHei', sans-serif;
+}
+.terms-ul li .terms-info {
+  font-size: 13px;
+  line-height: 14px;
+  color: #867b7b;
+  padding: 10px;
+  text-indent: 2em;
+  display: none;
+  border-top: 1px solid #ccc;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  transition: all .6s ease;
+  font-family: 'Microsoft YaHei', "黑体", sans-serif;
+}
+.terms-ul li .terms-icon {
+  width: 30px;
+  height: 30px;
+  float: right;
+  background: url("http://media.winbaoxian.com/static/images/sales/terms-certa.png") right center no-repeat;
+  background-position: 0 0;
+  display: block;
+}
+.terms-ul li.active .terms-icon {
+  background-position: 0 -30px;
+}
+.terms-ul li.active .terms-info {
+  display: block;
+}
+.terms-ul li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+/***********************************************
+	-	           我的收藏            	-
+***********************************************/
+.my-collect {
+  width: 100%;
+  min-height: 100%;
+  padding: 10px;
+    overflow: hidden;
+}
+.collec-ul{
+    width: 100%;
+    display: block;
+    overflow: hidden;height:auto;
+}
+.collect-body{
+    background-color: #e5e5e5;
+}
+.collec-ul li {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+}
+.collec-ul li:nth-of-type(odd) {
+  padding-right: 5px;
+}
+.collec-ul li:nth-of-type(even) {
+  padding-left: 5px;
+}
+.collec-ul li .col-pic {
+  position: relative;
+}
+.collec-ul li .col-pic img{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.collec-ul li .col-item {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  display: block;
+}
+.collec-ul li .col-item:active{
+    background-color: #e1e1e1;
+}
+.col-item .col-title {
+  padding-left: 10px;
+  color: #000303;
+  min-height: 24px;
+  line-height: 20px;
+  font-size: 12px;
+  padding-top: 4px;
+}
+.col-item .col-text {
+  color: #000303;
+  font-size: 9px;
+  line-height: 14px;
+  padding: 4px 10px;
+}
+.col-item .col-info {
+  font-size: 12px;
+  color: #4cc5f4;
+  padding: 5px 10px;
+  border-top: 1px dashed #ebebeb;
+  line-height: 16px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 42px;
+
+}
+.collect-operate {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.61);
+  z-index: 10;
+}
+.col-delete-btnText {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #4cc5f4;
+  font-size: 13px;
+  text-align: center;
+  display: none;
+  float: left;
+}
+.col-delete-btn {
+  width: 50px;
+  height: 50px;
+  display: block;
+  float: right;
+  background: url("http://media.winbaoxian.com/static/images/sales/col-delete-icon.png") no-repeat;
+  background-size: 50px;
+  background-position: 0 0;
+}
+.col-delete-btn.active {
+  background-position: 0 -50px;
+}
+.col-delete-icon {
+  width: 20px;
+  height: 20px;
+  background: url("http://media.winbaoxian.com/static/images/sales/col-check-icon.png") no-repeat;
+  background-size: 20px;
+  background-position: 0 0;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  display: none;
+}
+.col-delete-icon.active {
+  background-position: 0 -20px;
+}
+/***********************************************
+	-	           兑换产品、规则            	-
+***********************************************/
+.dl-has-num {
+  padding: 20px;
+}
+.dl-has-num dd {
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+.dl-has-num .dd-icon {
+  width: 16px;
+  height: 16px;
+  background-color: #08b0ef;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  margin-top: 3px;
+}
+.dl-has-num .dd-info {
+  padding-left: 20px;
+  line-height: 24px;
+  color: #989898;
+}
+.rule-title {
+  margin-top: 10px;
+  height: 35px;
+  width: 100%;
+  display: block;
+}
+.rule-name {
+  height: 35px;
+  line-height: 35px;
+  padding-left: 20px;
+  text-align: left;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  font-size: 15px;
+}
+.right-arrow {
+  width: 35px;
+  height: 35px;
+  border-top: 35px solid #fff;
+  border-right: 25px solid transparent;
+  display: inline-block;
+}
+.rule-dl {
+  width: 100%;
+  padding: 0 20px;
+}
+.rule-dl dt {
+  margin-top: 10px;
+}
+.rule-cate-name {
+  padding: 6px 8px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 3px;
+}
+.rule-blue .rule-name {
+  background-color: #08b0ef;
+}
+.rule-blue .right-arrow {
+  border-top-color: #08b0ef;
+}
+.rule-blue .rule-cate-name {
+  background-color: #08b0ef;
+}
+/**/
+/***********************************************
+	-	          搜索页面              	-
+***********************************************/
+.search-fixed {
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    left: 0;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    z-index: 2000;
+}
+.top90 {
+    top: 90px;
+}
+.top-search {
+    height: 44px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.top-search .left-search-input {
+    width: 87.5%;
+    float: left;
+    padding: 6px 9px;
+}
+.top-search .left-search-input .form-control {
+    height: 32px;
+    padding: 0;
+    border: 1px solid #d9d8dd;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 30px;
+    font-size: 12px;
+    background: #ffffff url("http://media.winbaoxian.com/static/images/sales/search-icon.png") 10px center no-repeat;
+    background-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+.top-search .left-search-input .form-control::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+.top-search .cancel-search-btn {
+    width: 12.5%;
+    height: 44px;
+    line-height: 44px;
+    float: right;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    color: #08b0ef;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+}
+/*搜索结果页面*/
+.search-result {
+    padding-top: 44px;
+    display: block;
+    width: 100%;
+    /*min-height: 100%;*/
+    background-color: #f0f0f0;
+    height: auto;
+    overflow: auto;
+}
+.first-tip-text {
+    color: #989898;
+    font-size: 14px;
+    text-align: center;
+    margin: 30px auto;
+}
+.no-find-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    background-color: #d7d7d7;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.no-find-icon .s-circle {
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    border-radius: 6px;
+    left: 50%;
+    margin-left: -6px;
+    top: 16px;
+    background-color: #ffffff;
+}
+.no-find-icon .s-line {
+    width: 12px;
+    height: 40px;
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    margin-left: -6px;
+    border-radius: 5px;
+}
+.no-find-result {
+    width: 320px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -160px;
+    display: block;
+}
+.no-find-result .tip-text {
+    color: #747474;
+    font-size: 13px;
+    padding: 10px 50px;
+}
+.color-9c {
+    color: #9c9c9c;
+}
+.search-ul li a {
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+}
+/***/
+.search-open {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    z-index: 2000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}

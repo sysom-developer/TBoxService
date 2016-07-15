@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>开发文档</title>
+<link type="text/css" rel="stylesheet" href="http://img.yeelink.net/yeelink/resource/css/global.css" /><link type="text/css" rel="stylesheet" href="__ROOT__/Public/css/developer.css" />
+</head>
+<body>
+
+
+
+<div id="header">
+    <div class="inset">
+	<div id="developer_main" class="devdoc">
+		<h1>API在线调试</i></h1>
+		<div id="debugbox">
+		<form id="frmDebug" name="frmDebug" method="post" action="{:U('Debug/recive')}">
+			<p>
+				<label>接口: </label> 
+				<input type="text" id="url" name="data[url]" value="" />
+			</p>
+			<p>
+				<label>API Key:</label> 
+				<input type="text" id="apikey" name="data[apikey]" value="" />	
+			</p>
+			<p>
+				<label>请求方式:</label> 
+				<label><input checked="checked" name="data[request_type]" type="radio" value="GET"  />GET</label> 
+				<label><input name="data[request_type]" type="radio" value="POST"  />POST </label>
+				<label><input name="data[request_type]" type="radio" value="PUT"  />PUT </label>
+				<label><input name="data[request_type]" type="radio" value="DELETE"  />DELETE</label> 	
+			</p>
+			<p>
+				<label>Post数据:</label> <textarea id="post_data" name="data[post_data]"></textarea><br/>
+			</p>
+			<p>
+				<label>&nbsp;</label> <button type="submit" class="btn">发送</button>
+			</p>
+			
+		</form>
+		</div>
+		<h4>Response</h4>
+		<div class="Response">
+			
+		
+		<foreach name="Response" item="vo" > 
+		 <p ><span>{$key}:</span>{$vo}</p></foreach>
+		
+		</div>
+	</div>
+	</div>
+	
+</div>
+
+
+</body>
+</html>

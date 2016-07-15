@@ -1,0 +1,112 @@
+ #plan{background-image:url(http://media.winbaoxian.com/static/images/n3/ping_xinli_bg.png?v=123)}
+              body{background: #fff}.tc{text-align: center}
+              .logo{background-image:url(http://media.winbaoxian.com/static/images/n3/pingan/pinganLogo_.png?v=123)}
+              .blockDiv,.managerContact,.footer{background-color:#ffa885}
+              .planRuleText dt,.planRuleText dd,.formPartCont li,.blockInDiv{background-color: #fff}
+              .rulePop{background:none !important}
+              .rulePop a{background-color: #ff6c1c!important;color:#fff}
+              .blockInTitle{border-bottom:#ffa885 1px solid}
+              .blockInTitle i{background-color: #ffa885;color:#fff}
+              .planLine{background-color: #ff6c1c}
+              .planIco{color: #ff6c1c; background-color: #ffa885}
+              .kingPer p {background: #ff6c1c;color: #fff}
+              .kingPer b {background: #fff}
+              .kingPer .active {background: #edcd96;color: #ff9}
+              .plus, .minus {color: #d37f4a}
+              .managerPhoto{border:#ffa885 1px solid}
+              .managerIco{background:#fff;color:#ffa885}
+              .footer{color:#fff}
+              .planRuleText dd b{color:#f00}
+              .blockInTitle{font-size: 16px; margin-bottom: 5px}
+              .sbTable{color:#333;font-size: 14px; line-height: 22px}
+              .sbTable td{padding: 5px 0;border:none}
+              .sbTable b{color:#ffa885; font-size: 18px}
+              .blockDiv{padding:1px 0}
+              .blockInDiv{margin-top:0.3em;padding:0.3em;width:94%; position: relative}
+                .blockInDiv .hLine{width:100%;position: absolute;height:1px;background: #eee;top:50%;left:0}
+                .blockInDiv .sLine{width:1px;position: absolute;height:100%;background: #eee;top:0;left:50%}
+              #profitDescShow{border:#ffa885 1px solid;border-radius: 10px; line-height: 2em}
+                .tu{display: none}
+                .cnmTit{border:#ffa885 2px solid;border-radius: 10px;width:70px; margin: 0.5em auto 0; text-align: center; line-height: 24px; font-size: 13px}
+              .kingPer{line-height: 2.2em}
+                .kingPer p{border:#ff9f07 1px solid;background: #fff;color:#ff9f07}
+                .kingPer .active{background: #ff9f07}
+              #profitDescShow ul li{width:96%!important;padding-left:4%!important;border-left:none!important;}
+                #profitDescShow ul li span{margin-left:20%}
+                .kingPerDo{width:80%; margin:0 auto;height:3.5em}
+                .rangeBg{background: #ff9f07;top:22px}.rangeGrey{top:22px}
+                .rangeBtn{background:#ff9f07;width: auto;top:-7px}
+              .rangeBtn{border:#ff9f07 1px solid;border-radius: 100%}
+              .rangeBtn b{width:13px;height:13px;background: #ff9f07;border:5px #fff solid;display: block;border-radius: 100%}
+                .plus{font-size: 2.2em;right:-36px}.minus{left:-36px;font-size:2.6em}.plus,.minus{color: #ff9f07;width:36px;height:30px;text-align: center}
+                .tt{color:#666;font-size: 12px}.sooo{color:#333!important;font-size: 16px}
+                .p4{border-top:#ff6c1c 1px solid;padding-top: 10px;width:96%; margin: 0 auto}
+                .comIcoText{padding-left:10px;font-size: 13px}
+                .comIcoText b{color:#ffa885}
+              .insureShow a,.insureShow1 a{background:#ffa885}
+              .insureAdd tr th{border-bottom:#b6dcf1 1px solid}
+
+              .blockInDiv {
+                  padding: 0.5em;
+                  width: 92%
+              }
+
+              .insureShow {
+                  width: 40px;
+                  height: 20px;
+                  position: absolute;
+                  left: 50%;
+                  bottom: -20px;
+                  margin-left: -20px;
+                  z-index: 1;
+                  overflow: hidden
+              }
+              .insureShow1{
+                  width: 40px;
+                  height: 20px;
+                  position: absolute;
+                  left: 50%;
+                  bottom:0;
+                  margin-left: -20px;
+                  z-index: 1;
+                  overflow: hidden
+              }
+              .insureShow1 a {
+                  width: 40px;
+                  height:35px;
+                  display: block;
+                  text-align: center;
+                  border-radius: 100%;
+                  position: absolute;
+                  bottom:-20px;
+                  left: 0;
+                  color: #fff
+              }
+
+              .insureShow a {
+                  width: 40px;
+                  height: 20px;
+                  display: block;
+                  padding-top: 20px;
+                  text-align: center;
+                  border-radius: 100%;
+                  position: absolute;
+                  top: -25px;
+                  left: 0;
+                  color: #fff
+              }
+
+              .insureAdd {
+                  font-size: 0.8em;
+                  width: 100%;
+                  line-height: 24px
+              }
+              .insureAdd tr th{padding:5px; line-height:18px}
+              .insureAdd tr td {
+                  border-bottom: #efefef 1px solid;
+                  border-right: #efefef 1px solid
+              }
+
+              .insureAdd tr td:last-child {
+                  border-right: none
+              }

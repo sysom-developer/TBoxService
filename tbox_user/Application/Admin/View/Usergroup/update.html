@@ -1,0 +1,84 @@
+<include file="Public/_header"/>
+
+
+<script type="text/javascript">
+ $(document).ready(function() {
+
+    });
+/*   var modularlist="{$modular}";
+  alert(modularlist[1]['name']);
+   $.each(modularlist,function(n,value) {   
+           alert(value);  
+           var trs = "";  
+             
+           }); */
+</script>
+<div class="home-index">
+  <div class="bao_menu">
+    <div class="first-child">
+    用户组管理
+    </div>
+      <div class="unactive "onclick="javascript:window.location.href='{:U('Usergroup/index')}'">
+      用户组
+    </div>
+    <div class="active last-child" >
+    修改用户组
+  </div>
+    <div class="unactive last-child" onclick="javascript:window.location.href='{:U('Usergroup/addmodular')}'">
+    添加用户权限
+  </div>
+  </div>
+
+
+      <div class="comm-box">
+        <form class="form-horizontal" id="form" role="form" 
+        ENCTYPE="multipart/form-data"method="post" action="{:U('Usergroup/update')}">
+          <input type="hidden" name="id" value="{$data.id}" placeholder="">
+          <div class="form-group marn_left">
+            <label class="col-sm-2 control-label">名称</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="名称" name="name"value="{$data.name}" >
+            </div>
+          </div>
+                  <div class="form-group ">
+            <p class="first_modular_title">权限</p>
+           
+           
+             <volist name="allmodular" id="modular">
+              <div style="width: 100%;">
+               <p class="first_modular">{$modular.name}</p>
+               <volist name="modular.second_modular" id="sec_modular">
+              <if condition="$sec_modular.checked eq  1 ">
+               <div class="second_modular">
+             <input type="checkbox" id="{$sec_modular.id}" name="modular[]"checked="checked"value="{$sec_modular.id}"> 
+             <label for="{$sec_modular.id}">{$sec_modular.name}</label>
+           </div>
+               <else />  
+                <div class="second_modular">
+               &nbsp;&nbsp;<input type="checkbox" id="{$sec_modular.id}" name="modular[]"value="{$sec_modular.id}">
+               <label for="{$sec_modular.id}">{$sec_modular.name}</label> 
+             </div>
+               </if>
+             </volist>
+                </div>
+                <hr>
+             </volist>
+             
+            
+          </div>
+
+          <div class="form-group marn_left">
+               <div class="col-sm-offset-2 col-sm-10">
+                 <button type="button" class="btn orange" onclick="javascript:history.go(-1);">取消</button>
+              <button type="submit" class="btn orange">编辑</button>
+            </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+
+   
+    </div>
+ 
+<include file="Public/_footer"/>

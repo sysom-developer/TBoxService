@@ -1,0 +1,57 @@
+  <include file="Public/_header"/>
+<script type="text/javascript">
+var url="__CONTROLLER__";
+var root="__ROOT__";
+var apikey="{$reconds.apikey}";
+</script>
+<div id="body-wrapper">
+<include file="Public/sidebar"/>
+<div id="main-content">
+    <noscript>
+    <div class="notification error png_bg">
+      <div>您的浏览器禁止使用或者不支持Javascript，请开启Javascript支持或者升级为更新的版本。</div>
+    </div>
+    </noscript>
+    
+    <!-- End .shortcut-buttons-set -->
+    
+    <div class="clear"></div>
+     {$content}
+    <!-- here goes the main body view -->
+
+    <script type="text/javascript" src="__ROOT__/Public/js/user_devices.js"></script>
+   <!--  <script type="text/javascript" src="/js/highstock.js" ></script>
+   
+     <script type="text/javascript" src="/js/data_chart.js" ></script>
+   <script type="text/javascript" src="/js/GPS.js"></script>
+   <script type="text/javascript" src="/js/photoShow.js"></script>
+   <script type="text/javascript" src="/js/timeline/timeline.js"></script>
+   <link rel="stylesheet" type="text/css" href="/css/timeline.css">
+   <link type="text/css" href="/js/datetimepicker/blue.datetimepicker.css" rel="stylesheet" /> -->
+    <script type="text/javascript">		
+    $(document).ready( function() {
+      $(".default-tab").removeClass("current");
+   
+    /*  $(".default-tab").first().addClass("current");*/
+      var tab=$(".default-tab").first().attr("tab");
+     $(".tab-content").hide(); 
+   /*  $("#tab"+tab).show();*/
+    });
+		var serverTime = 1449796702 ;
+		var lastPhoto = null;
+		var map_id = [];
+		var chart_id = [];
+		
+		var photo_id = [];
+	</script>    
+    <div class="clear"></div>
+    <div id="footer"> <small>
+      <!-- Remove this notice or replace it with whatever you want -->
+     &#169;Copyright 2015 嘉兴礼海电气有限公司</small> </div>
+    <!-- End #footer -->
+    
+  </div>
+  </div>
+</body>
+<include file="Public/_footer"/>
+</html>

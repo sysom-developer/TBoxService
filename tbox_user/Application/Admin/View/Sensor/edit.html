@@ -1,0 +1,142 @@
+<include file="Public/_header"/>
+<div id="body-wrapper">
+  <include file="Public/sidebar"/>
+  <div id="main-content">
+    <noscript>
+    <div class="notification error png_bg">
+      <div>您的浏览器禁止使用或者不支持Javascript，请开启Javascript支持或者升级为更新的版本。</div>
+    </div>
+    </noscript>
+
+    <!-- End .shortcut-buttons-set -->
+    
+    <div class="clear"></div>
+    
+    <!-- here goes the main body view -->
+        <div class="content-box">
+      <div class="content-box-header">
+        <h3>增加新传感器</h3>
+        <ul class="content-box-tabs">
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1">
+        </div>
+          
+          <form action="{:U('Sensor/edit')}" method="post">
+            <fieldset>
+            <input type="hidden" id="id" name="id" value="{$data.id}"/>
+                <label>传感器名</label>
+                <small>为它起一个好记的名字, 以区别于其它传感器</small><br />
+                <input class="text-input small-input" type="text" id="sensor_title" name="title" value="{$data.title}" />
+                <span class="input-notification png_bg"></span>
+              </p>
+           
+              <p>
+                <label>类型</label>
+                <select name="type" id="sensor_type" class="small-input">
+                  <option value="0" selected="selected" >数值型传感器</option>
+                  <option value="5" >开关</option>
+                  <option value="6" >GPS</option>
+                  <option value="8" >泛传感器</option>
+                  <option value="9" >图像传感器</option>
+                  <option value="10" >微博抓取器</option>
+                </select>
+              </p>
+              
+              <span id="control-group" class="data_sensor">
+              <p>
+              	<label>单位/符号</label>
+                <small>例如：摄氏度 ℃</small><br />
+                <input class="text-input" size="20" type="text" id="sensor_unit" name="unit_name" value="{$data.unit_name}" />
+                <input autocomplete="off" class="text-input little-input" type="text" id="sensor_unit_symbol" name="unit_symbol" value="{$data.unit_symbol}" />
+                <span class="input-notification png_bg"></span>
+                <span class="input-notification png_bg"></span>
+                <div id="sensor_unit_symbol_sel" style="display: none; float: left; position: absolute; margin: -13px 0 0 190px; background-color: #fff; border: solid 1px #ccc">
+                    <table style="background: #fff; border: solid 1px #ccc">
+                        <tr>
+                            <td class="sensor_unit_symbol_item">°C</td>
+                            <td class="sensor_unit_symbol_item">℉</td>
+                            <td class="sensor_unit_symbol_item">Ω</td>
+                        </tr>
+                        <tr>
+                            <td class="sensor_unit_symbol_item">㎡</td>
+                            <td class="sensor_unit_symbol_item">Pa</td>
+                            <td class="sensor_unit_symbol_item">Kg</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="clear: both"></div>
+              </p>
+              </span>
+              
+              <span id="control-group" class="weibo" style="display:none;">
+              <p>
+              	<label>微博提供商</label>
+                <select name="weiboProvider" id="weiboProvider" class="small-input">
+                  <option value="sina">新浪微博</option>
+                <!--  <option value="tencent">腾讯微博</option>-->
+                </select>
+                
+                <input type="hidden" id="access_token" name="access_token" value="" />
+                <input type="hidden" id="create_at" name="create_at" value=""/>
+                <input type="hidden" id="remind_in" name="remind_in" value=""/>
+                <input type="hidden" id="expires_in" name="expires_in" value=""/>
+                <input type="hidden" id="uid" name="uid" value=""/>
+                <input type="hidden" id="openid" name="openid" value=""/>
+                <input type="hidden" id="openkey" name="openkey" value=""/>
+                <input type="button" class="button" id="weiboGetAuth" name="weiboGetAuth" value="获取授权"/>
+                <span class="input-notification png_bg weibo_notify"></span><br />
+                <small>使用微博发布功能, 需要授权"Yeelink微博提醒"访问您的微博帐号.<br />腾讯微博应用还在审核中, 暂时无法使用.</small>
+                <br /><br />
+<b>授权信息</b><br />
+Access Token: <span id="access_token_show"></span><br />
+有效期至: <span id="expires_time"></span><br />
+                <span class="input-notification png_bg"></span>
+              </p>
+              </span>
+              
+              <p>
+                <label>标签TAGS</label>
+                <small>标签之间请使用逗号(,)分隔</small><br />
+                <input class="text-input medium-input" type="text" id="sensor_tags" name="sensor_tags" value="" />
+                <span class="input-notification png_bg"></span>
+              </p>
+            <p>
+              <label>描述</label>
+              <small>不超过30个字符</small><br />
+              <textarea class="text-input textarea" id="sensor_about" name="sensor_about" cols="79" rows="6"></textarea>
+              <span class="input-notification png_bg"></span>
+            </p>
+            
+              <p>
+                <input class="button cancelbutton" type="reset" value="  清空  " /> 
+                <input class="button" type="submit" value="  保存  " />
+              </p>
+           </fieldset>
+           <div class="clear"></div>
+         </form>
+      </div>
+    </div>
+    <script language="javascript">
+      function blur_access_token()
+      {
+        $("#access_token").blur();
+      }
+    </script>
+    <script type="text/javascript" src="__ROOT__/Public/js/user_new_sensors.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/js/new_action.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2790042403" type="text/javascript" charset="utf-8"></script>
+    <div class="clear"></div>
+    
+    <div id="footer"> 
+      <!-- Remove this notice or replace it with whatever you want -->
+      &#169;Copyright 2015 嘉兴礼海电气有限公司  </div>
+    <!-- End #footer -->
+    
+  </div>
+</div>
+</body>
+<include file="Public/_footer"/>
+</html>

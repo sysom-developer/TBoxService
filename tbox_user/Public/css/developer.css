@@ -1,0 +1,396 @@
+#banner {
+	background: url(../images/banner_dev_common.jpg) center center no-repeat;
+	height:400px;
+	overflow:hidden;
+	color:#fff;
+}
+#banner.bg_dev{
+	background: url(../images/dev_banner.jpg) center center no-repeat;
+}
+.Response p{
+    width: 100%;
+    word-wrap:break-word;word-break:break-all;
+}
+#banner.tall{
+	height:560px;
+}
+#banner.normal{
+	height:400px;
+}
+#banner.short{
+	height:160px;
+}
+#banner .btn_warning{
+	position: relative;
+	left:140px;
+	top:200px;
+}
+.banner_img {
+	margin:0 auto;
+	min-width:1200px;
+	width:1200px;
+	height: 420px;
+	position: relative;
+	z-index:0;
+}
+.banner_img .join_btn {
+	left: 190px;
+	position: absolute;
+	top: 249px;
+}
+.join_btn a {
+	background-color: #DCF0FC;
+	border-bottom: 2px solid #3E9CE9;
+	color: #006ADE;
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px 15px;
+}
+.join_btn a:hover {
+	background-color: #cfe4f0;
+	border-bottom: 2px solid #3d95de;
+	color: #006ADE;
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px 15px;
+}
+#developer_bodyer {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 1200px;
+}
+#wiki_nav {
+	background-color: #f1f1f1;
+	float: left;
+	padding:10px;
+	width: 265px;
+	min-height:660px;
+}
+#wiki_nav h2 {
+	color: #333;
+	font-size: 22px;
+	line-height:60px;
+}
+#wiki_nav .searchbar_blue{margin-bottom:10px;}
+#wiki_nav ul {
+}
+#wiki_nav ul.menu>li {
+	color: #666;
+	font-size: 14px;
+	line-height:30px;
+	cursor: pointer;
+}
+#wiki_nav ul.menu>li.multi:hover h3{
+	background: url(../images/arrow-gray-t2b.png) left 10px no-repeat;
+}
+#wiki_nav ul.menu>li.multi.select h3{
+	background: url(../images/arrow_blue_b2t.png) left 10px no-repeat;
+}
+#wiki_nav ul.menu>li.multi.select h3 a{
+	color:#0061AB;
+	font-weight:bold;
+}
+#wiki_nav ul.menu>li.single:hover h3{
+	background:url(../images/arrow_gray_left.png) left 10px no-repeat;
+}
+#wiki_nav ul.menu>li.single.select h3{
+	background:url(../images/arrow_blue_l2r.png) left 10px no-repeat;
+}
+#wiki_nav ul.menu>li.single.select h3 a{
+	color:#0061AB;
+	font-weight:bold;
+}
+#wiki_nav ul.menu>li h3{
+	padding-left:20px;
+}
+#wiki_nav h3 a{
+	font-size:16px;
+	color:#333;
+	line-height:36px;
+}
+#wiki_nav h3 a:hover{
+	color:#0061AB;
+}
+#wiki_nav ul.menu li ul{
+	margin-left:20px;
+	display:none;
+}
+#wiki_nav ul.menu li.select ul{
+	display:block;
+}
+#wiki_nav ul.menu li ul li {
+	padding-left:10px;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-MS-transition:all .2s ease-in-out;
+}
+#wiki_nav ul.menu li ul li:hover {
+	background:none;
+	padding-left:16px;
+}
+#wiki_nav ul.menu li ul li a {
+	color:#666;
+	display:block;
+}
+#wiki_nav ul.menu li ul li.select{
+	background:none;
+	padding-left:16px;
+}
+#wiki_nav ul.menu li ul li.select a{
+	color:#007ad5;
+}
+#wiki_nav ul.menu li ul li a:hover{
+	color:#007ad5;
+}
+
+#developer_main {
+	margin:0 auto;
+	margin-top: 20px;
+	width: 895px;
+}
+#support {
+	overflow: hidden;
+	padding: 20px 0;
+}
+#support li dl{
+	padding-left:64px;
+	margin-bottom:10px;
+}
+#support li dt{
+	font-size:16px;
+	line-height:30px;
+	color:#333;
+}
+#support li dd{
+	color:#999;
+	font-size:12px;
+}
+#support .api, #support .sample, #support .tool{
+	width:263px;
+	float:left;
+	padding:0 10px;
+}
+
+#support .api{margin-right:10px;}
+#support .api dl{
+	background:url(../images/icon_api.png) left top no-repeat;
+}
+#support .sample{
+	padding:0 19px;
+	border-left:1px solid #eee;
+	border-right:1px solid #eee;
+}
+#support .sample dl{
+	background:url(../images/icon_sample.png) left top no-repeat;
+}
+#support .tool{margin-left:10px;}
+#support .tool dl{
+	background:url(../images/icon_tool.png) left top no-repeat;
+}
+#support li{color:#666;font-size:14px;}
+#support li a{color:#666;}
+#support li em a{display:block;line-height:28px;}
+#support li cite{font-size:12px;color:#999;line-height:24px}
+#support li cite a{color:#999;}
+
+#forums{background:url(../images/shadow_top.png) top center no-repeat;padding-top:8px;}
+#forums .inset{
+	background:url(../images/shadow_bottom.png) bottom center no-repeat;
+	/*background-color:#fafafa;*/
+	padding-bottom:8px;
+}
+#forums .box{background-color:#fafafa;overflow:hidden;padding:0 40px;position:relative;overflow:hidden;}
+#forums .mask{overflow:hidden;}
+#forums ul{padding:20px 0;overflow:hidden;}
+#forums ul li{float:left;}
+#forums ul li .img{float:left;padding-right:5px;}
+#forums ul li em a{color:#aaa;line-height:28px;font-size:14px;}
+#forums ul li p{width:145px;color:#ccc;font-size:12px;}
+#forums .navbar{}
+#forums .navbar a{position:absolute;top:50%;margin-top:-14px;}
+#forums .navbar a.prev{left:0;}
+#forums .navbar a.next{right:0;}
+
+#news{padding-top:20px;}
+#news h3{color:#333;line-height:50px;font-size:18px;}
+#news h3 span{color:#007ad5;}
+#sns{width:430px;float:left;}
+#sns li{position:relative;}
+#sns li i{position:absolute;right:0px;top:6px;font-size:12px;color:#999;}
+#sns li a{line-height:28px;}
+#creator{width:430px;float:right;position:relative;}
+#creator .box{overflow:hidden;position:relative;}
+#creator ul li{float:left;width:430px;}
+#creator dl dt img{float:left;margin-right:10px;}
+#creator em a{color:#333;line-height:40px;font-size:16px;}
+#creator dd{font-size:12px; color:#666;line-height:20px;}
+#creator cite a{line-height:30px;}
+#creator .navbar{width:58px;position:absolute;right:0;top:0;}
+#creator .navbar .prev{float:left;}
+#creator .navbar .next{float:right;}
+
+.devdoc table.common{table-layout: auto;margin:10px 0;}
+.devdoc table.common a{color:#0061ab;}
+.devdoc table.common{color:#333;}
+.devdoc table.common tbody{font-size:12px;}
+.devdoc img{
+	border:5px solid #eee;
+}
+
+.devdoc h1{
+	color:#333;
+	line-height:50px;
+	font-size:24px;
+	margin-bottom:10px;
+	/*padding-left: 65px;
+	background:url(../images/icon_api.png) left center no-repeat;*/
+}
+.devdoc h1 i{
+	color:#666;
+	font-size:16px;
+}
+.devdoc h2{
+	color:#333;
+	line-height:30px;
+	font-size:18px;
+	padding:20px 0 0;
+}
+
+.devdoc h3{
+	font-size:16px;
+	color:#0061ab;
+	line-height:40px;
+	font-weight:bold;
+}
+
+.devdoc h4{
+	font-size:14px;
+	color:#333;
+	line-height:40px;
+	font-weight:bold;
+	background:#f1f1f1;
+	padding: 0 10px;
+	margin:10px 0;
+}
+
+.devdoc p.info{
+	color:#999;
+	line-height:30px;
+	margin-top:0;
+}
+.devdoc p.note{
+	font-size:12px;
+}
+.devdoc p.note em{
+	color:#0061AB;
+	font-weight:bold;
+	padding-right:4px;
+}
+.devdoc p{
+	color:#666;
+	line-height:30px;
+	padding:0 10px;
+	margin: 10px 0;
+}
+
+.devdoc pre{
+	background:#f1f1f1;
+	color:#333;
+	font-family:"Consolas", "Courier";
+	padding:10px;
+	overflow:auto;
+	margin:10px 0;
+}
+.devdoc code{
+	font-family:"Consolas", "Courier";
+	background:#f1f1f1;
+	padding:0 3px;
+	color:#333;
+}
+.devdoc a{
+	color:#007AD5;
+}
+
+.devdoc .doc_nav{
+	position:fixed;
+	top:70px;
+	right:50%;
+	margin-right:-720px;
+	width:100px;
+	border: 1px solid #eee;
+	display:none;
+}
+.devdoc .doc_nav h4{line-height: 30px;margin:0;}
+.devdoc .doc_nav li{padding:0 4px;border-bottom: 1px solid #eee;background: #fff;}
+.devdoc .doc_nav a{color:#666;font-size:12px;line-height:24px;display:block;}
+.devdoc .doc_nav a:hover{color:#007AD5;}
+
+.devdoc .local{
+	position:relative;
+	top: -70px;
+}
+.devdoc .doc_nav .gotop{
+	display:block;
+	width:26px;
+	height:26px;
+	position: absolute;
+	top:1px;right:1px;
+	background:url(../images/arrow-gray-b2t.png) center center no-repeat;
+	text-indent:-999em;
+	cursor: pointer;
+}
+.devdoc .doc_nav .gotop:hover{
+	background-color:#ccc;
+}
+
+.article_content ul li{
+	list-style: square;
+	color: #666;
+	margin-left:20px;
+	line-height:24px;
+}
+
+
+#debugbox{}
+#debugbox label{
+	display: inline-block;
+	width:80px;
+	vertical-align:top;
+	line-height:28px;
+	color:#333;
+}
+#debugbox input[type="text"], #debugbox textarea{
+	border: 2px solid #eee;
+	outline:none;
+	line-height:24px;
+	padding: 0 4px;
+}
+#debugbox input[type="text"]{
+	width:260px;
+	height:24px;
+	
+}
+#debugbox textarea{
+	width:400px;
+	height:200px;
+}
+
+#debugbox input:focus, #debugbox textarea:focus{
+	border: 2px solid #007ad5;
+	outline:none;
+	box-shadow:0 0 3px #007ad5 inset; 
+}
+
+.list li{
+	margin:10px 0;
+}
+.list h3{
+	font-size:16px;
+}
+.list h3 a{
+	color:#007AD5;
+}
+
+.list cite{
+	color:#999;
+}

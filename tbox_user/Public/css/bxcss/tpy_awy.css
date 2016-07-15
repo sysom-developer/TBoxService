@@ -1,0 +1,22 @@
+  #plan{background-image:url(http://media.winbaoxian.com/static/images/n3/tpy_aiwuyou_bg.png)}
+          .logo{background-image:url(http://media.winbaoxian.com/static/images/n3/taipingyang/taipingyangLogo.png);width:33%}
+          .blockDiv,.managerContact,.footer{background-color:#bae29d}
+          .planRuleText dt,.planRuleText dd,.formPartCont li,.blockInDiv{background-color: #fff}
+          .rulePop{background:none !important}
+          .rulePop a{background-color: #79aa56!important;color:#fff}
+          .blockInTitle{border-bottom:#bae29d 1px solid}
+          .blockInTitle i{background-color: #bae29d;color:#fff}
+          .planLine{background-color: #79aa56}
+          .planIco{color: #79aa56; background-color: #bae29d}
+          .kingPer p {background: #79aa56;color: #fff}
+          .kingPer b {background: #fff}
+          .kingPer .active {background: #edcd96;color: #ff9}
+          .plus, .minus {color: #d37f4a}
+          .managerPhoto{border:#bae29d 1px solid}
+          .managerIco{background:#fff;color:#bae29d}
+          .footer{color:#fff}
+          .planRuleText dd b{color:#f00}
+          .planRuleText{width:100%;margin:0 auto;border-bottom: #bae29d 1px solid;padding:1.5em 0 0.5em 0;position: relative; margin-top: 0.5em}
+          .planRuleText dt{width:3.5em;height:3em;border-radius: 100%;background: #ccc;padding:0.5em 0 0 0; position: absolute;left:5%;top:1em; text-align: center; line-height:1.2em;color:#fff}
+          .planRuleText dt b{font-weight: bold; font-size: 1.2em}
+          .planRuleText dd{padding-left:30%;height:3em;line-height:1.5em}
