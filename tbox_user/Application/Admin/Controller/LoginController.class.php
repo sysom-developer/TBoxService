@@ -53,7 +53,7 @@ class LoginController extends Controller {
                $group=implode(",",$new['modular_id']);
                 session('group',$group);
 */
-              
+              $token=session_id();
               cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
               cookie('name',$arr["name"]);  //设置cookie
               session('adminid',$arr["id"]); 
