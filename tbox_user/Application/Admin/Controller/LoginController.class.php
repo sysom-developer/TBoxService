@@ -55,16 +55,16 @@ class LoginController extends Controller {
 */
               session(array('name'=>'session_id','expire'=>3600));
               session('id',$arr["id"]);
-              echo(session_id());
+              
               $token=session_id();
-              if(S($token)=="1")
+/*              if(S($token)=="1")
                 {
                   S(,NULL);
                 }
               else{
                 S($token,'1',3600);
               }  
-              exit;
+              exit;*/
              /* cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
               cookie('name',$arr["name"]); */ //设置cookie
                
