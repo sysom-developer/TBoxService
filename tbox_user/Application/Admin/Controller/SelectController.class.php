@@ -6,7 +6,7 @@ use Org\Util\String;
 /**
  * 
  */
-class SelectController extends Controller {
+class SelectController extends BaseController {
   public function __construct(){
     parent::__construct();
 
