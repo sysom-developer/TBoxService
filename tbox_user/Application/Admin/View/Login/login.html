@@ -23,10 +23,10 @@ $(document).ready(function(){
 			function(data){
 				alert(data);
 				$("#Mask").fadeIn(1000);
-				$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { Type: $(".CHact").val(), TobId: $("#TOB-ID").val() },
-				function(data){
-					window.location.href="{:U('Index/index')}";	
-				})
+//				$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { Type: $(".CHact").val(), TobId: $("#TOB-ID").val() },
+//				function(data){
+//					window.location.href="{:U('Index/index')}";	
+//				})
 			})
  	
 		 }
