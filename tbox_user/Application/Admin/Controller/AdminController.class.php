@@ -14,14 +14,10 @@ class AdminController extends BaseController {
   }
 
   public function index(){
-    $keyword = I('get.keyword');
-    if( $keyword ) {
-      $map['name'] = array('like',"%{$keyword}%");
-      $map['keyword'] = $keyword;
-    }
-    $join="LEFT JOIN usergroup  on usergroup.id=admin.usergroup_id";
-    $field="admin.id as id,admin.name as name,usergroup.name as usergroup";
-    $this->base_join_index($this->model,$map,$join,$field);
+    
+    $module=['name'=>'Air_conditioner','url'=>'Air_conditioner/index'];
+    $this->assign($module);
+    $this->display();
   }
   public function add(){
     if(IS_GET)
