@@ -9,7 +9,7 @@ use comm\Cache\MyRedis;
 class Handler {
     public static function exe($client_id,$data, $data_file_name)
     {
-        /*self::loginast_box();*/
+        self::loginAsUser();
         global $error_code;
         $packet = new Packet($data);
         if(!Gateway::isUidOnline($packet->Equipment_ID))

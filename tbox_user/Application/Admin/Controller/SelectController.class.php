@@ -6,18 +6,15 @@ use Org\Util\String;
 /**
  * 
  */
-class DeviceController extends BaseController {
+class SelectController extends BaseController {
   public function __construct(){
     parent::__construct();
 
-    $this->model =  M('Device');
   }
-	public function index(){
+	public function Car_brand(){
 
-	$map['advert.is_on']=1;
-	$map['advert.is_delete']=0;
-    $this->assign('type','index');
-    $this->base_join_index($this->model,$map,$join,$field);
+	$arr=['GeelyNL-3','Geely_EF-3/4'];
+    $this->ajaxReturn($arr);
 	}
 	public function new_device(){
 		if(IS_GET)
