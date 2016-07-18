@@ -6,40 +6,18 @@ use Org\Util\String;
 /**
  * 
  */
-class SelectController extends BaseController {
+class SelectController extends Controller {
   public function __construct(){
     parent::__construct();
 
   }
 	public function Car_brand(){
-
 	$arr=['GeelyNL-3','Geely_EF-3/4'];
     $this->ajaxReturn($arr);
 	}
-	public function new_device(){
-		if(IS_GET)
-  		{
-    	$this->display();
-    	}
-    	else{
-    			$data1['user_id']=session("adminid");
-    			$data1['device_id']=I('post.device_id');
-    		   	$this->model= D('Device');
-   				$count=$this->model->where($data1)->count(1);
-   				if($count!=0)
-   				{
-   					 $this->error('编号重复');
-   				}
-   				$data=I('post.');
-   				$data['user_id']=$data1['user_id'];
-			if($this->model->create($data)){
-			 	$this->model->add($data);
-     
-      $this->success('操作成功！','');
-    }else{
-      $this->error($this->model->getError());
-    }
-    	}
+	public function tbox_id(){
+	$arr=['1','2'];
+    $this->ajaxReturn($arr);
   }
 	public function devices(){
 		$data['user_id']=session("adminid");
