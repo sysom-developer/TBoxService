@@ -10,7 +10,7 @@ class AdminController extends BaseController {
   public function __construct(){
     parent::__construct();
 
-    $this->model =  M('Admin');
+  /*  $this->model =  M('Admin');*/
   }
 
   public function index(){
