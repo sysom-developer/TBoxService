@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/less.css">
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/Login.css">
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/jquery-labelauty.css">
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="css/ie8.css">
 <![endif]-->
@@ -12,21 +13,26 @@
 <link rel="stylesheet" type="text/css" href="css/ie.css"> 
 <![endif]-->
 <script src="__ROOT__/Public/js/jquery-1.11.0.min.js"></script>
+<script src="__ROOT__/Public/js/jquery-labelauty.js"></script>
 <script>
 $(document).ready(function(){
+
   $("#btn1").click(function(){
   	if($("#name").val()!=""&&$("#password").val()!=""){
-  		$.post("{:U('login/login')}", { name: $("#name").val(), password: $("#password").val() },
+  		$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { name: $("#name").val(), password: $("#password").val() },
     	function(data){
      	 if(data==1){
-		 	$.get("{:U('Select/Car_brand')}", 
+		 	$.get("http://localhost/TBoxService/tbox_user/index.php/Admin/Select/Car_brand", 
 			function(data){
-				alert(data);
+				var se = "";
+				for( var i=0;i<data.length;i++){
+					se = se + "<li><input type='radio' name='radio' data-labelauty='"+ data[i] +"'></li>";
+				}
+				$(".dowebok").html(se);
+				$(function(){
+					$(':input').labelauty();
+				});
 				$("#Mask").fadeIn(1000);
-//				$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { Type: $(".CHact").val(), TobId: $("#TOB-ID").val() },
-//				function(data){
-//					window.location.href="{:U('Index/index')}";	
-//				})
 			})
  	
 		 }
@@ -37,7 +43,17 @@ $(document).ready(function(){
   	}else{
 		alert("请输入账号密码！！！");
 	}
-  });   
+  }); 
+  
+  function checkUser(){
+  	if($(".dowebok").children().val() == ""){
+		alert("请选择车型，输入I-BOX的id。");
+		return false;
+	}
+	else{
+		return true;
+	}
+  };
 });
 </script>
 </head>
@@ -56,7 +72,6 @@ $(document).ready(function(){
               <input id="password" type="password" placeholder="请输入密码">
             </div>
             <div class="login_reme">
-              <input type="checkbox">
               <a class="reme1">记住账号</a> <a class="reme2">忘记密码?</a> 
 			</div>
             <span class="error_xinxi" style="display:none;">您输入的密码不正确，请重新输入</span> <a class="btnStyle btn-register" id="btn1"> 立即登录</a>				
@@ -69,15 +84,19 @@ $(document).ready(function(){
 	<div class="black"></div>
 	<div id="choice">
 		<h3>请选择以下信息</h3>
-		<div class="CH">
-			<span>车型:</span>
-			<div style="float:left; width:380px;"><a href="#" class="CH1 CH-active">长安吉利</a></div>
-			<div class="clear"></div>
-		</div>
-		<div class="TOB-ID">
-			<span>TBOX-ID:</span><input type="text" id="TOB-ID" />
-		</div>
-		<a href="#" id="BtnTB">提交</a>
+		<form id="formid"  name= "myform" method = 'post'  action = 'Admin/index' onsubmit = "return checkUser();">
+			<div class="CH">
+				<span class="CHS" style="height:39px; line-height:39px;">车型:</span>
+				<div id="CX" style="float:left; width:380px;  margin-bottom:20px;">
+					<ul class="dowebok">
+					</ul>	
+				</div>
+				<div class="TOB-ID">
+					<span class="CHS" style="height:31px; line-height:31px;">TBOX-ID:</span><input type="text" id="TOB-ID" />
+				</div>
+				<input type="submit" id="BtnTB" value="提交">
+			</div>
+		</form>
 	</div>
 </div>
 
