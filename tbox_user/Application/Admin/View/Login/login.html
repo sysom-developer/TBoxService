@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/less.css">
 <link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/Login.css">
-<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/jquery-labelauty.css">
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="css/ie8.css">
 <![endif]-->
@@ -26,38 +25,25 @@ $(document).ready(function(){
 			function(data){
 				var se = "";
 				for( var i=0;i<data.length;i++){
-					se = se + "<li><input type='radio' name='radio' data-labelauty='"+ data[i] +"'></li>";
+					se = se + "<option value ='"+ data[i].id +"'>"+ data[i].name +"</option>";
 				}
-				$(".dowebok").html(se);
-				$(function(){
-					$(':input').labelauty();
-				});
+				$("#CX").html(se);
+				$("#TOB-ID").val(data[0].id);
 				$("#Mask").fadeIn(1000);
 			})
 		 }else{
 			alert(data);
-		 }WW
+		 }
 		});
 
   	}else{
 		alert("请输入账号密码！");
 	}
   })
-  
-  function checkUser(){
-//  	if($("input[name=radio]").val() == ""){
-//		alert("请选择车型");
-//		return false;
-//	}
-//	else{
-//		return true;
-//	}
-	
-  };
-  $(".TOB-ID").click(function(){
-	  alert($("input[name='radio']").val());
-  });
 });
+function si(){
+	$("#TOB-ID").val($("#CX").val()); 
+}
 </script>
 </head>
 <body>
@@ -90,24 +76,18 @@ $(document).ready(function(){
 	<div class="black"></div>
 	<div id="choice">
 		<h3>请选择以下信息</h3>
-		<form id="formid"  name= "myform" method = 'post'  action = "http://localhost/TBoxService/tbox_user/index.php/Admin/Admin/index" onsubmit = "return checkUser();">
+		<form action="http://localhost/TBoxService/tbox_user/index.php/Admin/Admin/index">
 			<div class="CH">
-				<span class="CHS" style="height:39px; line-height:39px;">车型:</span>
-				<div id="CX" style="float:left; width:380px;  margin-bottom:20px;">
-					<ul class="dowebok">
-					</ul>	
-				</div>
+				<span class="CHS" style="height:36px; line-height:36px;">车型:</span>
+				<select id="CX" onChange="si()">
+				</select>
 				<div class="TOB-ID">
-					<span class="CHS" style="height:31px; line-height:31px;">TBOX-ID:</span><input type="text" id="TOB-ID" />
+					<span class="CHS" style="height:31px; line-height:31px;">TBOX-ID:</span><input type="text" id="TOB-ID" readonly />
 				</div>
 				<input type="submit" id="BtnTB" value="提交">
 			</div>
 		</form>
 	</div>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> f9e3e266f078e156d43b3081222c68e2362fc4d1
 </body>
 </html>

@@ -317,7 +317,7 @@ html,body{ height:100%;}
 .TOB-ID{ padding-bottom:50px; border-bottom:1px solid #95A3FF;}
 #TOB-ID{ width:200px; height:25px; border:1px solid #95A3FF; padding:2px 0 2px 10px; border-radius:2px;}
 .clear:after{ content:""; display:block; clear:both; visibility:hidden; height:0;}
-#BtnTB{ width:250px; margin:20px 0 0 125px; display:inline-block; height:40px; line-height:40px; color:#fff; background:#7D8BD9; text-align:center; border-radius:4px; border:none; cursor:pointer;}
-
-
+#BtnTB{ width:250px; margin:40px 0 0 125px; display:inline-block; height:40px; line-height:40px; color:#fff; background:#7D8BD9; text-align:center; border-radius:4px; border:none; cursor:pointer;}
+#CX{ width: 212px; height: 36px; margin-bottom: 20px; border: 1px solid #95A3FF; color:#000;}
+#CX option{ color: #95A3FF; height: 30px; font-size: 14px;}
 
