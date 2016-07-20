@@ -99,9 +99,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       } else {
         this.el = $(options.element);
       }
-      if ((this.el == null) || this.el.length === 0) {
-        throw new Error("Graph container element not found");
-      }
       if (this.el.css('position') === 'static') {
         this.el.css('position', 'relative');
       }
@@ -109,7 +106,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       if (typeof this.options.units === 'string') {
         this.options.postUnits = options.units;
       }
-      this.raphael = new Raphael(this.el[0]);
+
       this.elementWidth = null;
       this.elementHeight = null;
       this.dirty = false;
@@ -441,7 +438,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             _results = [];
             for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
               gridLine = _ref1[_i];
-              _results.push(this.measureText(this.yAxisFormat(gridLine)).width);
+
             }
             return _results;
           }).call(this);
@@ -452,7 +449,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             var _i, _ref2, _results;
             _results = [];
             for (i = _i = 0, _ref2 = this.data.length; 0 <= _ref2 ? _i < _ref2 : _i > _ref2; i = 0 <= _ref2 ? ++_i : --_i) {
-              _results.push(this.measureText(this.data[i].text, -this.options.xLabelAngle).height);
+              
             }
             return _results;
           }).call(this);
@@ -481,7 +478,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     };
 
     Grid.prototype.redraw = function() {
-      this.raphael.clear();
+
       this._calc();
       this.drawGrid();
       this.drawGoals();
@@ -496,9 +493,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       if (angle == null) {
         angle = 0;
       }
-      tt = this.raphael.text(100, 100, text).attr('font-size', this.options.gridTextSize).attr('font-family', this.options.gridTextFamily).attr('font-weight', this.options.gridTextWeight).rotate(angle);
-      ret = tt.getBBox();
-      tt.remove();
+     
+
+
       return ret;
     };
 
@@ -569,7 +566,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     };
 
     Grid.prototype.drawYAxisLabel = function(xPos, yPos, text) {
-      return this.raphael.text(xPos, yPos, text).attr('font-size', this.options.gridTextSize).attr('font-family', this.options.gridTextFamily).attr('font-weight', this.options.gridTextWeight).attr('fill', this.options.gridTextColor).attr('text-anchor', 'end');
+      
     };
 
     Grid.prototype.drawGridLine = function(path) {
