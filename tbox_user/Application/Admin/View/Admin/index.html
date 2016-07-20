@@ -2,31 +2,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-    <link href="__ROOT__/Public/css/bootstrap.css" rel="stylesheet" />
-    <link href="__ROOT__/Public/css/font-awesome.css" rel="stylesheet" />
-    <link href="__ROOT__/Public/css/morris-0.4.3.min.css" rel="stylesheet" />
-    <link href="__ROOT__/Public/css/custom-styles.css" rel="stylesheet" />
-	
-    <script src="__ROOT__/Public/js/jquery-1.11.0.min.js"></script>
-    <script src="__ROOT__/Public/js/bootstrap.min.js"></script>
-    <script src="__ROOT__/Public/js/jquery.metisMenu.js"></script>
-    <script src="__ROOT__/Public/js/raphael-2.1.0.min.js"></script>
-    <script src="__ROOT__/Public/js/morris.js"></script>
-    <script src="__ROOT__/Public/js/custom-scripts.js"></script>
-</head>
-<script type="text/javascript">
- $(document).ready(function(){
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>index</title>
+<link href="__ROOT__/Public/css/bootstrap.css" rel="stylesheet" />
+<link href="__ROOT__/Public/css/font-awesome.css" rel="stylesheet" />
+<link href="__ROOT__/Public/css/morris-0.4.3.min.css" rel="stylesheet" />
+<link href="__ROOT__/Public/css/custom-styles.css" rel="stylesheet" />
+
+<script src="__ROOT__/Public/js/jquery-1.11.0.min.js"></script>
+<script src="__ROOT__/Public/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/js/jquery.metisMenu.js"></script>
+<script src="__ROOT__/Public/js/raphael-2.1.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
     $.get("{:U('Menu/getmenu')}",
         function(data){
+            var list = "";
+            for( var i=0;i<data.length;i++){
+                list = list + "<li><a href='#' onclick = loading('"+ data[i].url +"')>"+ data[i].name +"</a></li>"
+            }
+            $("#main-menu").html(list);
+        }
+    )
 
+ })  
+function loading(arr){
+    alert(arr);
+    $.post("{:U('module/index')}",  { name:arr } ,
+        function(data){
             alert(data);
         }
- })  
-
+    )
+}
 </script>
+</head>
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
