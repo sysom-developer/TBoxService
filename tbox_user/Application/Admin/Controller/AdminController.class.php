@@ -14,8 +14,12 @@ class AdminController extends BaseController {
   }
 
   public function index(){
-    
-    $module=['name'=>'Air_conditioner','url'=>'Air_conditioner/index'];
+    $TOB_ID=I('post.TOB_ID');
+    $CX=I('post.CX');
+    session('TOB_ID',$TOB_ID);
+    session('CX',$CX);
+    $where['type']=2;
+    $arr=M('module')->where($where)->select();
     $this->assign($module);
     $this->display();
   }

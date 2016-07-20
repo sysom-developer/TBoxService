@@ -51,11 +51,20 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {
-      
-      $result_set = Handler::exe($client_id,$message);
+      if($_SERVER['GATEWAY_PORT']==8282)
+      {
+        $result_set = Handler::con2tbx($client_id,$message);
         // 向所有人发送 
 
         Gateway::sendToClient($client_id,$result_set);
+      }
+      else if($_SERVER['GATEWAY_PORT']==8283)
+      {
+        $result_set = Handler::con2user($client_id,$message);
+        // 向所有人发送 
+
+        Gateway::sendToClient($client_id,$result_set);
+      }
       
    }
    

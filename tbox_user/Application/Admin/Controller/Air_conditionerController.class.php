@@ -6,44 +6,15 @@ use Org\Util\String;
 /**
  * 
  */
-class SensorController extends BaseController {
+class Air_conditionerController extends BaseController {
   public function __construct(){
     parent::__construct();
 
     $this->model =  M('Sensor');
   }
-	public function new_sensor(){
-	if(IS_GET)
-	{
-		$device_id=I('get.device_id');
-    	$this->assign('device_id',$device_id);
-    	$this->display();
-    }
-    else
-    {
-    	
-		$data1['user_id']=session('adminid');
-		$data1['device_id']=I('post.device_id');
-		$data1['sensor_id']=I('post.sensor_id');
-		$count=$this->model->where($data1)->count(1);
-		   	if($count!=0)
-   				{
-   					 $this->error('编号重复');
-   				}
-   				$data=I('post.');
-   				$data['user_id']=$data1['user_id'];
-
-	    if($this->model->create($data)){
-    	if($this->model->add($data))
-    		$this->success('操作成功！','');
-			else
-				$this->error('操作失败！','');
-		  	
-		}else{
-		  $this->error($this->model->getError());
-		}
-		}
-	
+	public function index(){
+		
+		$this->display();
 	}
 
 	public function add(){

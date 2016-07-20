@@ -7,9 +7,8 @@ use comm\Protocol\Packet;
 use comm\Protocol\Byte;
 use comm\Cache\MyRedis;
 class Handler {
-    public static function exe($client_id,$data, $data_file_name)
+    public static function con2tbx($client_id,$data, $data_file_name)
     {
-        self::loginAsUser();
         global $error_code;
         $packet = new Packet($data);
         if(!Gateway::isUidOnline($packet->Equipment_ID))
@@ -21,7 +20,19 @@ class Handler {
        /* Gateway::sendToClient($client_id,$result_set);*/
         return $result;
     }
-
+    public static function con2user($client_id,$data, $data_file_name)
+    {
+        global $error_code;
+        $packet = new Packet($data);
+        if(!Gateway::isUidOnline($packet->Equipment_ID))
+        {
+            Gateway::bindUid($client_id, $packet->Equipment_ID);
+        }
+        
+        $result = self::message_handler($packet, $data_file_name);
+       /* Gateway::sendToClient($client_id,$result_set);*/
+        return $result;
+    }
     static function message_handler($packet, $data_file_name)
     {
         global $error_code, $command_table;
