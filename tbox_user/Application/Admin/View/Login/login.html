@@ -76,13 +76,13 @@ function si(){
 	<div class="black"></div>
 	<div id="choice">
 		<h3>请选择以下信息</h3>
-		<form action="http://localhost/TBoxService/tbox_user/index.php/Admin/Admin/index">
+		<form action="http://localhost/TBoxService/tbox_user/index.php/Admin/Admin/index" method = 'post'>
 			<div class="CH">
 				<span class="CHS" style="height:36px; line-height:36px;">车型:</span>
-				<select id="CX" onChange="si()">
+				<select name="CX" id="CX" onChange="si()">
 				</select>
 				<div class="TOB-ID">
-					<span class="CHS" style="height:31px; line-height:31px;">TBOX-ID:</span><input type="text" id="TOB-ID" readonly />
+					<span class="CHS" style="height:31px; line-height:31px;">TBOX-ID:</span><input name="TOB_ID"type="text" id="TOB-ID" readonly />
 				</div>
 				<input type="submit" id="BtnTB" value="提交">
 			</div>

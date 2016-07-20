@@ -21,7 +21,7 @@ use \Workerman\Autoloader;
 require_once __DIR__ . '/../../Workerman/Autoloader.php';
 Autoloader::setRootPath(__DIR__);
 
-// gateway 进程，这里使用Ngtp协议
+// gateway 进程，这里使用Websocket协议
 $gateway = new Gateway("Websocket://0.0.0.0:8283");
 // gateway名称，status方便查看
 $gateway->name = 'websocket'; 
