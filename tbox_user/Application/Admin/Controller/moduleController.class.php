@@ -6,7 +6,7 @@ use Org\Util\String;
 /**
  * 
  */
-class moduleController extends BaseController {
+class ModuleController extends BaseController {
   public function __construct(){
     parent::__construct();
 
