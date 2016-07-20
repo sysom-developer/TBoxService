@@ -6,15 +6,16 @@ use Org\Util\String;
 /**
  * 
  */
-class Air_conditionerController extends BaseController {
+class moduleController extends BaseController {
   public function __construct(){
     parent::__construct();
 
     $this->model =  M('Sensor');
   }
 	public function index(){
-		
-		$this->display();
+		$name=I('post.name');
+		$html=$this->fetch($name.':index');
+		$this->ajaxReturn($html);
 	}
 
 	public function add(){
