@@ -18,10 +18,10 @@ $(document).ready(function(){
 
   $("#btn1").click(function(){
   	if($("#name").val()!=""&&$("#password").val()!=""){
-  		$.post("http://localhost/TBoxService/tbox_user/index.php/Admin/login/login", { name: $("#name").val(), password: $("#password").val() },
+  		$.post("{:U('Login/login')}", { name: $("#name").val(), password: $("#password").val() },
     	function(data){
      	 if(data==1){
-		 	$.get("http://localhost/TBoxService/tbox_user/index.php/Admin/Select/Car_brand", 
+		 	$.get("{:U('Select/Car_brand')}", 
 			function(data){
 				var se = "";
 				for( var i=0;i<data.length;i++){

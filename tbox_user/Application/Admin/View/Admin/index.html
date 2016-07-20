@@ -17,17 +17,27 @@
     <script src="__ROOT__/Public/js/morris.js"></script>
     <script src="__ROOT__/Public/js/custom-scripts.js"></script>
 </head>
+<script type="text/javascript">
+ $(document).ready(function(){
+    $.get("{:U('Menu/getmenu')}",
+        function(data){
 
+            alert(data);
+        }
+ })  
+
+</script>
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <span></span>
                 <a class="navbar-brand" href="#">SYSOM</a>
             </div>
 
@@ -36,7 +46,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <!--<ul class="dropdown-menu dropdown-messages">
+                    <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -79,13 +89,13 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>-->
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <!--<ul class="dropdown-menu dropdown-tasks">
+                    <ul class="dropdown-menu dropdown-tasks">
                         <li>
                             <a href="#">
                                 <div>
@@ -156,13 +166,13 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>-->
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <!--<ul class="dropdown-menu dropdown-alerts">
+                    <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
                                 <div>
@@ -214,13 +224,13 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>-->
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <!--<ul class="dropdown-menu dropdown-user">
+                    <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -228,7 +238,7 @@
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
-                    </ul>-->
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -236,272 +246,177 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
                     <li>
-                        <a class="active-menu" href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a class="active-menu" href="#"><i class="fa fa-dashboard"></i> 空调模块</a>
                     </li>
 					<li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> 车门管理模块</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="#"><i class="fa fa-qrcode"></i> 驾驶员侧锁模块</a>
                     </li>
                     
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="#"><i class="fa fa-table"></i> 引擎模块</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
+                        <a href="#"><i class="fa fa-edit"></i> 门窗模块</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a href="#"><i class="fa fa-sitemap"></i> 闪灯模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 鸣笛模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 天窗模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 后备箱模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 照明灯模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 雨刷模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 后视镜模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 座椅模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 车内灯模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 中控屏模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 摄像头模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 电池模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 电控手刹模块</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-file"></i> 娱乐屏模块</a>
                     </li>
                 </ul>
 
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-            <div id="page-inner">
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-header">
-                            Dashboard <small>Summary of your App</small>
-                        </h1>
-                    </div>
-                </div>
-
-                <!--<div class="row">
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-green">
-                            <div class="panel-body">
-                                <i class="fa fa-bar-chart-o fa-5x"></i>
-                                <h3>8,457</h3>
-                            </div>
-                            <div class="panel-footer back-footer-green">
-                                Daily Visits
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-blue">
-                            <div class="panel-body">
-                                <i class="fa fa-shopping-cart fa-5x"></i>
-                                <h3>52,160 </h3>
-                            </div>
-                            <div class="panel-footer back-footer-blue">
-                                Sales
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-red">
-                            <div class="panel-body">
-                                <i class="fa fa fa-comments fa-5x"></i>
-                                <h3>15,823 </h3>
-                            </div>
-                            <div class="panel-footer back-footer-red">
-                                Comments
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-brown">
-                            <div class="panel-body">
-                                <i class="fa fa-users fa-5x"></i>
-                                <h3>36,752 </h3>
-                            </div>
-                            <div class="panel-footer back-footer-brown">
-                                No. of Visits
-
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-
-
-                <!--<div class="row">
-
-
-                    <div class="col-md-9 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Bar Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Donut Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>-->
-
-
-                <!--<div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Tasks Panel
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">7 minutes ago</span>
-                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">16 minutes ago</span>
-                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">36 minutes ago</span>
-                                        <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has been added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1.23 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <i class="fa fa-fw fa-globe"></i> Saved the world
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Responsive Table Example
-                            </div> 
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>S No.</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>User Name</th>
-                                                <th>Email ID.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>John15482</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kimsila</td>
-                                                <td>Marriye</td>
-                                                <td>Kim1425</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Rossye</td>
-                                                <td>Nermal</td>
-                                                <td>Rossy1245</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Richard</td>
-                                                <td>Orieal</td>
-                                                <td>Rich5685</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Jacob</td>
-                                                <td>Hielsar</td>
-                                                <td>Jac4587</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Wrapel</td>
-                                                <td>Dere</td>
-                                                <td>Wrap4585</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>-->
-
-            </div>
-        </div>
+		  <div class="panel" style="padding:50px 0;">
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">远程控制空调模式：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+				  <input type="text" class="form-control">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">修改</button>
+				  </span>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">目标温度：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+				  <input type="text" class="form-control">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">修改</button>
+				  </span>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">空调运行时间：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+				  <input type="text" class="form-control">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">修改</button>
+				  </span>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">风量档位（手动空调）：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+				  <input type="text" class="form-control">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">修改</button>
+				  </span>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">模式状态（手动空调）：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+				  <input type="text" class="form-control">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="button">修改</button>
+				  </span>
+			    </div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">进气模式（手动空调）：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+					<select class="onOff">
+					  <option value="on">打开</option>
+					  <option value="off">关闭</option>
+					</select>
+					<span class="input-group-btn">
+					  <button class="btn btn-default" type="button">修改</button>
+					</span>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="row margin-tb">
+			  <div class="col-md-4">
+				<p class="title">压缩机请求（手动空调）：</p>
+			  </div>
+			  <div class="col-md-6">
+				<div class="input-group">
+					<select class="onOff">
+					  <option value="on">打开</option>
+					  <option value="off">关闭</option>
+					</select>
+					<span class="input-group-btn">
+					  <button class="btn btn-default" type="button">修改</button>
+					</span>
+				</div>
+			  </div>
+			</div>			
+		  </div>
+        </div> 	   
     </div>
-
-
 </body>
 
 </html>
