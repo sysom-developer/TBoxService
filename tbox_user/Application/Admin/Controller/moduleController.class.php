@@ -13,9 +13,9 @@ class ModuleController extends BaseController {
   }
 	public function index(){
 		$name=I('post.name');
-		$this->ajaxReturn($name);
-		exit;
-		$html=$this->fetch($name.':index');
+	/*	$this->ajaxReturn($name);
+		exit;*/
+		$html=$this->fetch('Module:'.$name);
 		$this->ajaxReturn($html);
 	}
 
