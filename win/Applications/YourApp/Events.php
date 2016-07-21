@@ -38,22 +38,7 @@ class Events
      */
     public static function onConnect($client_id)
     {
-      if($_SERVER['GATEWAY_PORT']==8282)
-      {
-        $result_set = Handler_tbox::con2tbx($client_id,$message);
-        // 向所有人发送 
 
-        Gateway::sendToClient($client_id,$result_set);
-      }
-      else if($_SERVER['GATEWAY_PORT']==8283)
-      {
-       if(!Handler_user::validate_user($_GET['token'])){
-            $connection->close();
-        }
-      }
-       
-
-        // 向所有人发送
        
     }
     
