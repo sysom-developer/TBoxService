@@ -63,6 +63,7 @@ class LoginController extends Controller {
                 }
               S($token,'1',3600);
               cookie('token',$token);
+
              /* cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
               cookie('name',$arr["name"]); */ //设置cookie
               $this->ajaxReturn('1');
