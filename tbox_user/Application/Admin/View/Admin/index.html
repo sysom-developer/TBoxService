@@ -14,29 +14,38 @@
 <script src="__ROOT__/Public/js/bootstrap.min.js"></script>
 <script src="__ROOT__/Public/js/jquery.metisMenu.js"></script>
 <script src="__ROOT__/Public/js/raphael-2.1.0.min.js"></script>
-<script>
-$(document).ready(function(){
+<script type="text/javascript">
+    $(document).ready(function(){
 
     $.get("{:U('Menu/getmenu')}",
         function(data){
             var list = "";
             for( var i=0;i<data.length;i++){
-                list = list + "<li><a href='#' onclick = loading('"+ data[i].url +"')>"+ data[i].name +"</a></li>"
+                list = list + "<li class='"+ data[i].url +"'><a href='#' onclick = loading('"+ data[i].url +"')>"+ data[i].name +"</a></li>"
             }
             $("#main-menu").html(list);
+            $(".Air_conditioner").addClass("active-menu");
+            $.post("{:U('module/index')}",  { name:data[0].url } ,
+                function(data){
+                    $("#page-wrapper").html(data);
+                }
+            )
         }
     )
+    
 
  })  
 function loading(arr){
-    alert(arr);
+    $("#main-menu").children().removeClass("active-menu");
+    $("." + arr).addClass("active-menu");
     $.post("{:U('module/index')}",  { name:arr } ,
         function(data){
-            alert(data);
+            $("#page-wrapper").html(data);
         }
     )
 }
 </script>
+<script type="text/javascript" src="__ROOT__/Public/js/websockets.js"></script>
 </head>
 
 <body>
@@ -258,175 +267,14 @@ function loading(arr){
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-                    <li>
-                        <a class="active-menu" href="#"><i class="fa fa-dashboard"></i> 空调模块</a>
-                    </li>
-					<li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i> 车门管理模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-qrcode"></i> 驾驶员侧锁模块</a>
-                    </li>
                     
-                    <li>
-                        <a href="#"><i class="fa fa-table"></i> 引擎模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit"></i> 门窗模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> 闪灯模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 鸣笛模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 天窗模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 后备箱模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 照明灯模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 雨刷模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 后视镜模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 座椅模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 车内灯模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 中控屏模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 摄像头模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 电池模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 电控手刹模块</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-file"></i> 娱乐屏模块</a>
-                    </li>
                 </ul>
 
             </div>
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-		  <div class="panel" style="padding:50px 0;">
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">远程控制空调模式：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-				  <input type="text" class="form-control">
-				  <span class="input-group-btn">
-					<button class="btn btn-default" type="button">修改</button>
-				  </span>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">目标温度：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-				  <input type="text" class="form-control">
-				  <span class="input-group-btn">
-					<button class="btn btn-default" type="button">修改</button>
-				  </span>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">空调运行时间：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-				  <input type="text" class="form-control">
-				  <span class="input-group-btn">
-					<button class="btn btn-default" type="button">修改</button>
-				  </span>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">风量档位（手动空调）：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-				  <input type="text" class="form-control">
-				  <span class="input-group-btn">
-					<button class="btn btn-default" type="button">修改</button>
-				  </span>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">模式状态（手动空调）：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-				  <input type="text" class="form-control">
-				  <span class="input-group-btn">
-					<button class="btn btn-default" type="button">修改</button>
-				  </span>
-			    </div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">进气模式（手动空调）：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-					<select class="onOff">
-					  <option value="on">打开</option>
-					  <option value="off">关闭</option>
-					</select>
-					<span class="input-group-btn">
-					  <button class="btn btn-default" type="button">修改</button>
-					</span>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="row margin-tb">
-			  <div class="col-md-4">
-				<p class="title">压缩机请求（手动空调）：</p>
-			  </div>
-			  <div class="col-md-6">
-				<div class="input-group">
-					<select class="onOff">
-					  <option value="on">打开</option>
-					  <option value="off">关闭</option>
-					</select>
-					<span class="input-group-btn">
-					  <button class="btn btn-default" type="button">修改</button>
-					</span>
-				</div>
-			  </div>
-			</div>			
-		  </div>
+		  
         </div> 	   
     </div>
 </body>
