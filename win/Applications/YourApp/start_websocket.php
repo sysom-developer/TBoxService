@@ -16,7 +16,7 @@ use \Workerman\WebServer;
 use \GatewayWorker\Gateway;
 use \GatewayWorker\BusinessWorker;
 use \Workerman\Autoloader;
-
+use comm\Handler_user;
 // 自动加载类
 require_once __DIR__ . '/../../Workerman/Autoloader.php';
 Autoloader::setRootPath(__DIR__);
@@ -46,6 +46,10 @@ $gateway->onConnect = function($connection)
 {
     $connection->onWebSocketConnect = function($connection , $http_header)
     {
+        /*if(!Handler_user::validate_user($_GET['token'])){
+            $connection->close();
+        }*/
+
         // 可以在这里判断连接来源是否合法，不合法就关掉连接
         // $_SERVER['HTTP_ORIGIN']标识来自哪个站点的页面发起的websocket链接
 /*        if($_SERVER['HTTP_ORIGIN'] != 'http://kedou.workerman.net')

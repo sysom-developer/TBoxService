@@ -20,8 +20,8 @@
 //declare(ticks=1);
 
 use \GatewayWorker\Lib\Gateway;
-use comm\Handler;
-
+use comm\Handler_tbox;
+use comm\Handler_user;
 
 /**
  * 主逻辑
@@ -38,10 +38,23 @@ class Events
      */
     public static function onConnect($client_id)
     {
-        // 向当前client_id发送数据 
-        Gateway::($client_id, "Hello $client_id");
+      if($_SERVER['GATEWAY_PORT']==8282)
+      {
+        $result_set = Handler_tbox::con2tbx($client_id,$message);
+        // 向所有人发送 
+
+        Gateway::sendToClient($client_id,$result_set);
+      }
+      else if($_SERVER['GATEWAY_PORT']==8283)
+      {
+       if(!Handler_user::validate_user($_GET['token'])){
+            $connection->close();
+        }
+      }
+       
+
         // 向所有人发送
-        Gateway::sendToAll("$client_id login");
+       
     }
     
    /**
@@ -53,14 +66,28 @@ class Events
    {
       if($_SERVER['GATEWAY_PORT']==8282)
       {
-        $result_set = Handler::con2tbx($client_id,$message);
+        $result_set = Handler_tbox::con2tbx($client_id,$message);
         // 向所有人发送 
 
         Gateway::sendToClient($client_id,$result_set);
       }
       else if($_SERVER['GATEWAY_PORT']==8283)
       {
-        $result_set = Handler::con2user($client_id,$message);
+        
+        if($_SESSION['token'])
+        {
+          $result_set = Handler_user::con2user($client_id,$message);
+        }
+        else{
+             if(!Handler_user::validate_user($message)){
+              Gateway::sendToClient($client_id,"login fail");
+              Gateway::closeClient($client_id);
+          }
+          else
+          {
+            Gateway::sendToClient($client_id,"login success");
+          }
+        }
         // 向所有人发送 
 
         Gateway::sendToClient($client_id,$result_set);

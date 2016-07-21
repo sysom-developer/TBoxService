@@ -7,9 +7,10 @@ use Org\Util\String;
  */
 class MenuController extends BaseController {
 	private $cx='cx_';
+	protected $model;
   public function __construct(){
     parent::__construct();
-
+ 	$this->model = M('module');
   }
 
   public function getmenu(){
@@ -21,7 +22,7 @@ class MenuController extends BaseController {
   	{
   		$where['module.type']=2;
   		$field="module.id,module.name,module.url,module.type,module.P_node";
-  		$arr=M('module')->field($field)->join("models_module on models_module.module_id=module.id")->join("models on models.id=models_module.models_id")->where($where)->select();
+  		$arr=$this->model->field($field)->join("models_module on models_module.module_id=module.id")->join("models on models.id=models_module.models_id")->where($where)->select();
   		/*foreach ($arr as $key => &$value) {
   			$value['url']=U($value['url'].'/index');
   		}*/

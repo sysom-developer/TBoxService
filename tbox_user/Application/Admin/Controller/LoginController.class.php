@@ -57,17 +57,14 @@ class LoginController extends Controller {
               session('id',$arr["id"]);
               
               $token=session_id();
-/*              if(S($token)=="1")
+              if(S($token)=="1")
                 {
-                  S(,NULL);
+                  S($token,NULL);
                 }
-              else{
-                S($token,'1',3600);
-              }  
-              exit;*/
+              S($token,'1',3600);
+              cookie('token',$token);
              /* cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
               cookie('name',$arr["name"]); */ //设置cookie
-               
               $this->ajaxReturn('1');
               }
             }

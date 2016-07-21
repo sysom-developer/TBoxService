@@ -6,21 +6,8 @@ use comm\Protocol\FID_ACK;
 use comm\Protocol\Packet;
 use comm\Protocol\Byte;
 use comm\Cache\MyRedis;
-class Handler {
+class Handler_tbox {
     public static function con2tbx($client_id,$data, $data_file_name)
-    {
-        global $error_code;
-        $packet = new Packet($data);
-        if(!Gateway::isUidOnline($packet->Equipment_ID))
-        {
-            Gateway::bindUid($client_id, $packet->Equipment_ID);
-        }
-        
-        $result = self::message_handler($packet, $data_file_name);
-       /* Gateway::sendToClient($client_id,$result_set);*/
-        return $result;
-    }
-    public static function con2user($client_id,$data, $data_file_name)
     {
         global $error_code;
         $packet = new Packet($data);
