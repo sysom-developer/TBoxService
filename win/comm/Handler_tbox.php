@@ -7,6 +7,14 @@ use comm\Protocol\Packet;
 use comm\Protocol\Byte;
 use comm\Cache\MyRedis;
 class Handler_tbox {
+    public static function con2tbx_demo($client_id,$data, $data_file_name){
+         if(!Gateway::isUidOnline($data))
+        {
+            Gateway::bindUid($client_id,$data);
+             $_SESSION['tbox']=$data;
+        }
+        
+    }
     public static function con2tbx($client_id,$data, $data_file_name)
     {
         global $error_code;

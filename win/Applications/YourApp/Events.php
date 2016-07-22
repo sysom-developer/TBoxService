@@ -51,10 +51,17 @@ class Events
    {
       if($_SERVER['GATEWAY_PORT']==8282)
       {
-        $result_set = Handler_tbox::con2tbx($client_id,$message);
-        // 向所有人发送 
-
-        Gateway::sendToClient($client_id,$result_set);
+       /* $result_set = Handler_tbox::con2tbx($client_id,$message);*/
+        if($_SESSION['tbox'])
+        {
+        Gateway::sendToClient($client_id,$message);
+       }
+// 向所有人发送 
+/*
+        Gateway::sendToClient($client_id,$result_set);*/
+      else{
+      $result_set = Handler_tbox::con2tbx_demo($client_id,$message);
+        }
       }
       else if($_SERVER['GATEWAY_PORT']==8283)
       {
@@ -64,13 +71,15 @@ class Events
           $result_set = Handler_user::con2user($client_id,$message);
         }
         else{
-             if(!Handler_user::validate_user($message)){
+             if(!Handler_user::validate_user($message,$client_id)){
               Gateway::sendToClient($client_id,"login fail");
               Gateway::closeClient($client_id);
           }
           else
           {
+
             Gateway::sendToClient($client_id,"login success");
+          /*  Gateway::sendToClient($client_id,json_encode($demo));*/
           }
         }
         // 向所有人发送 

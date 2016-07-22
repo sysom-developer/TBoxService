@@ -11,23 +11,31 @@ class Handler_user {
     public static function con2user($client_id,$data, $data_file_name)
     {
         global $error_code;
-        $packet = new Packet($data);
-        if(!Gateway::isUidOnline($packet->Equipment_ID))
+       
+        $packet = self::message_handler($data, $data_file_name);
+        $tbox_status=Gateway::getClientIdByUid($_SESSION('tbox'));
+        if(!$tbox_status)
+            return '设备不在线';
+        else
         {
-            Gateway::bindUid($client_id, $packet->Equipment_ID);
+            Gateway::sendToUid($_SESSION('tbox'),$packet);
+            return '请求已发送';
         }
         
-        $result = self::message_handler($packet, $data_file_name);
-       /* Gateway::sendToClient($client_id,$result_set);*/
-        return $result;
+        
     }
-    public static function validate_user($token)
+    public static function validate_user($token,$client_id)
     {
         $my_redis = MyRedis::getInstance();
         $value=$my_redis->get($token);
-        if($value=='1')
+        if($value)
         {
-            
+            if(!Gateway::isUidOnline($token))
+            {
+                Gateway::bindUid($client_id, $token);
+            }
+            $_SESSION['token']=$token;
+            $_SESSION['tbox']=$value;
             return true;
         }
         return false;

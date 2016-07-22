@@ -17,9 +17,18 @@ class AdminController extends BaseController {
     $TOB_ID=I('post.TOB_ID');
     $CX=I('post.CX');
     session('TOB_ID',$TOB_ID);
+
     session('CX',$CX);
-    $where['type']=2;
-    $arr=M('module')->where($where)->select();
+    $token=session_id();
+  if(S($token)==$TOB_ID)
+    {
+      S($token,NULL);
+      S($TOB_ID,NULL);
+    }
+    S($token,$TOB_ID,3600);
+    S($TOB_ID,$token,3600);
+    cookie('token',$token);
+
     $this->assign($module);
     $this->display();
   }

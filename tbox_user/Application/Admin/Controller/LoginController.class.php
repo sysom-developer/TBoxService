@@ -5,7 +5,7 @@ use Think\Controller;
  * 管理员用户
  */
 class LoginController extends Controller {
-
+  public function 
   public function login(){
     $name = I('post.name');
     $password = I('post.password');
@@ -56,13 +56,7 @@ class LoginController extends Controller {
               session(array('name'=>'session_id','expire'=>3600));
               session('id',$arr["id"]);
               
-              $token=session_id();
-              if(S($token)=="1")
-                {
-                  S($token,NULL);
-                }
-              S($token,'1',3600);
-              cookie('token',$token);
+              
 
              /* cookie('logintime',date('Y-m-d H:i:s',$arr["logintime"]));
               cookie('name',$arr["name"]); */ //设置cookie
