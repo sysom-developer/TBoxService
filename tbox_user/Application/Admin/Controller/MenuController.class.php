@@ -15,7 +15,7 @@ class MenuController extends BaseController {
 
   public function getmenu(){
   	$CX=session('CX');
-  	$string=S($cx.$CX);
+  	$string=S($this->cx.$CX);
 /*  	S($CX,null);
   	$this->ajaxReturn(1);*/
   	if($string==null)
@@ -26,7 +26,7 @@ class MenuController extends BaseController {
   		/*foreach ($arr as $key => &$value) {
   			$value['url']=U($value['url'].'/index');
   		}*/
-  		S($cx.$CX,json_encode($arr));
+  		S($this->cx.$CX,json_encode($arr));
   	}
   	else
   	{
