@@ -12,13 +12,13 @@ class Handler_user {
     {
         global $error_code;
        
-        $packet = self::message_handler($data, $data_file_name);
+       /* $packet = self::message_handler($data, $data_file_name);*/
         $tbox_status=Gateway::getClientIdByUid($_SESSION('tbox'));
         if(!$tbox_status)
             return '设备不在线';
         else
         {
-            Gateway::sendToUid($_SESSION('tbox'),$packet);
+            Gateway::sendToUid($_SESSION('tbox'),$data);
             return '请求已发送';
         }
         

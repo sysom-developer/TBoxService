@@ -69,6 +69,7 @@ class Events
         if($_SESSION['token'])
         {
           $result_set = Handler_user::con2user($client_id,$message);
+           Gateway::sendToClient($client_id,$result_set);
         }
         else{
              if(!Handler_user::validate_user($message,$client_id)){
@@ -84,7 +85,7 @@ class Events
         }
         // 向所有人发送 
 
-        Gateway::sendToClient($client_id,$result_set);
+       
       }
       
    }

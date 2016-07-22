@@ -5,7 +5,7 @@ use Think\Controller;
  * 管理员用户
  */
 class LoginController extends Controller {
-  public function 
+ 
   public function login(){
     $name = I('post.name');
     $password = I('post.password');

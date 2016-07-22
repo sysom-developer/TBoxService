@@ -22,7 +22,9 @@ require_once __DIR__ . '/../../Workerman/Autoloader.php';
 Autoloader::setRootPath(__DIR__);
 
 // gateway 进程，这里使用Ngtp协议
-$gateway = new Gateway("Ngtp://0.0.0.0:8282");
+/*$gateway = new Gateway("Ngtp://0.0.0.0:8282");*/
+$gateway = new Gateway("Websocket://0.0.0.0:8282");
+
 // gateway名称，status方便查看
 $gateway->name = 'YourAppGateway'; 
 // gateway进程数
