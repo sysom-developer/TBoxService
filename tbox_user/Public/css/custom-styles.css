@@ -429,9 +429,12 @@ font-size: 19px;
 
 p{ margin:0; padding:0;}
 .title{ text-align:right; line-height:34px; font-size:16px; color:#000; height: 34px;}
-.now{text-align:center; line-height:32px; font-size:16px; color:#000; height: 32px; border: 1px solid #ccc; border-radius: 4px;}
+.now{text-align:center; line-height:32px; font-size:inherit; color:#000; height: 32px; border: 1px solid #ccc; border-radius: 4px;}
 .margin-tb{ margin:20px 0;}
 .onOff{ padding:6px 12px; width:100%; border-radius:4px 0px 0px 4px; border:1px solid #ccc; height:34px;}
 .navbar-default .navbar-brand:hover{ color: #fff; }
 
 
+#alerrt{ z-index: 10; background: #fff; width: 300px; height: 240px; border: 3px solid #ccc; border-radius: 4px; position: absolute; left: 50%; top: 50%; margin-left: -150px; margin-top: -120px;}
+#alerrt h2{ height: 40px; background: #DEF; font-size: 22px; text-indent: 10px; line-height: 40px; color: #000; margin: 0; padding: 0; }
+#alerrt p{ text-indent: 10px; }

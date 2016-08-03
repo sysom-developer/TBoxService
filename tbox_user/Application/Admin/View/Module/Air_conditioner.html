@@ -5,33 +5,32 @@
 	  		<p class="title">远程控制空调模式：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">3</p>
+	  		<p class="now RemoteAC_Mode"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Mode" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Mode" onclick="newbtn(1,0,'RemoteAC_Mode')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
 	</div>	
-
 	<div class="row margin-tb">
 	  <div class="col-md-6">
 	  	<div class="col-md-6">
 	  		<p class="title">目标温度：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">32</p>
+	  		<p class="now RemoteAC_Temperature_Target"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Temperature_Target" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Temperature_Target" onclick="newbtn(1,0,'RemoteAC_Temperature_Target')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
@@ -43,14 +42,14 @@
 	  		<p class="title">空调运行时间：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">5</p>
+	  		<p class="now RemoteAC_Working_Time"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Working_Time" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Working_Time" onclick="newbtn(1,0,'RemoteAC_Working_Time')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
@@ -62,14 +61,14 @@
 	  		<p class="title">温度档位（手动空调）：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">15</p>
+	  		<p class="now RemoteAC_Temperature_Gears"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Temperature_Gears" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Temperature_Gears" onclick="newbtn(1,0,'RemoteAC_Temperature_Gears')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
@@ -81,14 +80,14 @@
 	  		<p class="title">风量档位（手动空调）：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">7</p>
+	  		<p class="now RemoteAC_Wind_Gears"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Wind_Gears" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Wind_Gears" onclick="newbtn(1,0,'RemoteAC_Wind_Gears')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
@@ -100,14 +99,14 @@
 	  		<p class="title">模式状态（手动空调）：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">4</p>
+	  		<p class="now RemoteAC_Run_mode"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="请输入修改后的内容...">
+		  <input type="text" class="form-control ipRemoteAC_Run_mode" placeholder="请输入修改后的内容...">
 		  <span class="input-group-btn">
-			<button class="btn btn-default" type="button">更新</button>
+			<button class="btn btn-default" id="RemoteAC_Run_mode" onclick="newbtn(1,0,'RemoteAC_Run_mode')" type="button">更新</button>
 		  </span>
 		</div>
 	  </div>
@@ -119,17 +118,17 @@
 	  		<p class="title">进气模式（手动空调）：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">打开</p>
+	  		<p class="now RemoteAC_Are_FlowMode"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-			<select class="onOff">
-			  <option value="on">打开</option>
-			  <option value="off">关闭</option>
+			<select class="onOff ipRemoteAC_Are_FlowMode">
+			  <option value="打开">打开</option>
+			  <option value="关闭">关闭</option>
 			</select>
 			<span class="input-group-btn">
-			  <button class="btn btn-default" type="button">更新</button>
+			  <button class="btn btn-default" id="RemoteAC_Are_FlowMode" onclick="newbtn(1,0,'RemoteAC_Are_FlowMode')" type="button">更新</button>
 			</span>
 		</div>
 	  </div>
@@ -141,17 +140,17 @@
 	  		<p class="title">压缩机请求（手动空调）：</p>
 	  	</div>
 		<div class="col-md-6">
-	  		<p class="now">打开</p>
+	  		<p class="now RemoteAC_Are_CompressorStatus"></p>
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
 		<div class="input-group">
-			<select class="onOff">
-			  <option value="on">打开</option>
-			  <option value="off">关闭</option>
+			<select class="onOff ipRemoteAC_Are_CompressorStatus">
+			  <option value="打开">打开</option>
+			  <option value="关闭">关闭</option>
 			</select>
 			<span class="input-group-btn">
-			  <button class="btn btn-default" type="button">更新</button>
+			  <button class="btn btn-default" id="RemoteAC_Are_CompressorStatus" onclick="newbtn(1,0,'RemoteAC_Are_CompressorStatus')" type="button">更新</button>
 			</span>
 		</div>
 	</div>

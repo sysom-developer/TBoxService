@@ -17,36 +17,105 @@
 <script type="text/javascript" src="__ROOT__/Public/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="__ROOT__/Public/js/jquery.json-2.2.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
+
+//AJAX左侧菜单栏内容获取
     $.get("{:U('Menu/getmenu')}",
         function(data){
             var list = "";
             for( var i=0;i<data.length;i++){
-                list = list + "<li class='"+ data[i].url +"'><a href='#' onclick = loading('"+ data[i].url +"')>"+ data[i].name +"</a></li>"
+                var ia = i+1;
+                list = list + "<li class='"+ data[i].url +"'><a href='#' onclick = loading("+ia+",'"+ data[i].url +"')>"+ data[i].name +"</a></li>"
             }
             $("#main-menu").html(list);
             $(".Air_conditioner").addClass("active-menu");
+            //中间内容正文部分获取数据（ajax）
             $.post("{:U('module/index')}",  { name:data[0].url } ,
                 function(data){
                     $("#page-wrapper").html(data);
+                    //websocket初始化连接
+                    websocket = startwebsocket();
                 }
             )
         }
     )
- })  
-function loading(arr){
+
+
+    
+//模拟测试与T-BOX连接
+    $(".navbar").click(function(){  
+        if(websocket.readyState == 0){
+            websocket.close();
+            alert("链接已断开"+websocket.readyState);
+        }
+        var arr = {'type':1,'module':1};
+        websocket.send( JSON.stringify(arr) );  
+    }); 
+})
+
+//websocket初始化连接（方法）
+function startwebsocket(){
+    var wsServer = 'ws://192.168.1.42:8283'; //服务器地址
+    var websocket = new WebSocket(wsServer); //创建WebSocket对象
+    websocket.onopen = function (evt) {
+        //初始化主页（空调页）当前内容数据
+        var arr = {'type':1,'module':1,'token':$.cookie('token')};
+        websocket.send( JSON.stringify(arr) );
+    };
+
+    websocket.onclose = function (evt) {
+    //已经关闭连接
+    };
+    websocket.onmessage = function (evt) {
+        var eda = $.parseJSON( evt.data );
+        if( eda.error != null ){
+            $("#alerrt p").html(eda.error);
+            $("#alerrt").show().delay(1000).hide(300);
+
+        }else{
+            $.each(eda, function(i,val){ 
+                $("."+i).html(val);
+            });
+            
+        }
+    };
+    websocket.onerror = function (evt) {
+    //产生异常
+    };
+    return websocket;
+
+};
+
+
+//左侧菜单栏点击加蓝色背景颜色
+function loading(md,arr){
     $("#main-menu").children().removeClass("active-menu");
     $("." + arr).addClass("active-menu");
     $.post("{:U('module/index')}",  { name:arr } ,
         function(data){
             $("#page-wrapper").html(data);
+            var arr = {'type':1,'module':md};
+            websocket.send( JSON.stringify(arr) );
         }
     )
+    
 }
-var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time','RemoteAC_Temperature_Gears','RemoteAC_Wind_Gears','RemoteAC_Run_mode','RemoteAC_Are_FlowMode','RemoteAC_Are_CompressorStatus'];
+//点击更新按钮提交当前数据
+function newbtn(md,oa,clas){
+    var str = $(".ip" + clas).val();
+    if( oa == 0){
+        var arr = {'type':2,'module':md};
+        arr[clas]=str;
+    }else{
+        var arr = {'type':2,'module':md,'object_anchors':oa};
+        arr[clas]=str;
+    }
+    websocket.send( JSON.stringify(arr) );
+    $(":text").val('');
+    
+}
 
 </script>
-<script type="text/javascript" src="__ROOT__/Public/js/websockets.js"></script>
 </head>
 
 <body>
@@ -68,7 +137,7 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                    <!-- <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -111,13 +180,13 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-tasks">
+                    <!-- <ul class="dropdown-menu dropdown-tasks">
                         <li>
                             <a href="#">
                                 <div>
@@ -188,13 +257,13 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
+                    <!-- <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
                                 <div>
@@ -246,13 +315,13 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <!-- <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -260,7 +329,7 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
             </ul>
         </nav>
@@ -277,6 +346,10 @@ var attr = ['RemoteAC_Mode','RemoteAC_Temperature_Target','RemoteAC_Working_Time
         <div id="page-wrapper">
 		  
         </div> 	   
+    </div>
+    <div id="alerrt" style="display:none;">
+        <h2>消息</h2>
+        <p></p>
     </div>
 </body>
 
