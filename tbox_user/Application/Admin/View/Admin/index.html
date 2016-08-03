@@ -59,7 +59,8 @@ function startwebsocket(){
     var websocket = new WebSocket(wsServer); //创建WebSocket对象
     websocket.onopen = function (evt) {
         //初始化主页（空调页）当前内容数据
-        var arr = {'type':1,'module':1,'token':$.cookie('token')};
+        var arr = {'type':1,'Control_Objective':1,'token':$.cookie('token')};
+        alert(arr.token);
         websocket.send( JSON.stringify(arr) );
     };
 
@@ -67,7 +68,8 @@ function startwebsocket(){
     //已经关闭连接
     };
     websocket.onmessage = function (evt) {
-        var eda = $.parseJSON( evt.data );
+        alert(evt.data);
+        /*var eda = $.parseJSON( evt.data );
         if( eda.error != null ){
             $("#alerrt p").html(eda.error);
             $("#alerrt").show().delay(1000).hide(300);
@@ -77,7 +79,7 @@ function startwebsocket(){
                 $("."+i).html(val);
             });
             
-        }
+        }*/
     };
     websocket.onerror = function (evt) {
     //产生异常
@@ -104,11 +106,12 @@ function loading(md,arr){
 function newbtn(md,oa,clas){
     var str = $(".ip" + clas).val();
     if( oa == 0){
-        var arr = {'type':2,'module':md};
-        arr[clas]=str;
+        var arr = {'type':2,'Control_Objective':md};
+        /*arr[clas]=str;*/
     }else{
-        var arr = {'type':2,'module':md,'object_anchors':oa};
-        arr[clas]=str;
+        var str1 = {'CTLSwitch_Status':0,'CTLMode':0,'CTLDirection':0,'GoalValue1':str};
+        var str2 = {'Control_Objective':md,'CTLObjPosition':oa,'RCTL_VHL_PARAMS':str1};
+        var arr = { 'type':2,'RemoteControl_Extended_Object':str2};
     }
     websocket.send( JSON.stringify(arr) );
     $(":text").val('');
